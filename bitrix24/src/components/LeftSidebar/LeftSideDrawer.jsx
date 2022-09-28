@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./left.module.css";
 import {
   Box,
@@ -6,28 +6,25 @@ import {
   Drawer,
   DrawerBody,
   DrawerContent,
-  HStack,
   Text,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
-// import items from "./db.json"
-// const fs = require("fs")
 const initItems = [
-  {id:1,title:"Subsciption", status:true},
+  {id:1,title:"Subsciption", status:false},
+  {id:3,title:"CRM", status:false},
+  {id:5,title:"Sites and stores", status:false},
+  {id:14,title:"Tasks and Projects", status:false},
   {id:2,title:"Setting", status:true},
-  {id:3,title:"CRM", status:true},
   {id:4,title:"Marketing", status:true},
-  {id:5,title:"Sites and stores", status:true},
   {id:6,title:"Company", status:true},
   {id:7,title:"Automation", status:true},
   {id:8,title:"Market", status:true},
-  {id:9,title:"Feed", status:true},
-  {id:10,title:"Calender", status:true},
+  {id:9,title:"Feed", status:false},
+  {id:10,title:"Calender", status:false},
   {id:11,title:"Online documents", status:true},
   {id:12,title:"Bitrix24.Drive", status:true},
   {id:13,title:"Webmail", status:true},
-  {id:14,title:"Tasks and Projects", status:false},
-  {id:15,title:"Chat and Calls", status:false},
+  {id:15,title:"Chat and Calls", status:true},
 ];
 
 export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
@@ -40,9 +37,6 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
     const updateData = data.map((el)=>el.id===id?{...el,status:!el.status}:el)
     setData(updateData)
   }
-  useEffect(()=>{
-
-  },[])
   return (
     <>
       <Drawer
