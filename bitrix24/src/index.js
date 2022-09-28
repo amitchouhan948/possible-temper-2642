@@ -3,6 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+<<<<<<< HEAD
+import { ChakraProvider } from '@chakra-ui/react';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <ChakraProvider>
+    <App />
+    </ChakraProvider>
+=======
 import { ChakraProvider } from '@chakra-ui/react'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,6 +21,7 @@ root.render(
     <App />
 </ChakraProvider>
 
+>>>>>>> 288ebea1ee3004e20584dc24282ede1034693c07
   </React.StrictMode>
 );
 
