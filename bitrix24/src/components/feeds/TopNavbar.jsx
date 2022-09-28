@@ -47,15 +47,16 @@ const TopNavbar = () => {
         justifyContent="space-between"
         alignItems={"center"}
         // ------(width for scroll) ----
-        w="1535px"
+        w="1395px"
         //------------------------------
         p="3"
         pr="10"
         pl="4"
+        ml={36}
       >
-        <Box display={"flex"} gap="6" alignItems={"center"}>
+        <Box display={"none"} gap="6" alignItems={"center"}>
           <Box fontSize={"23px"} color="#ffffff">
-            <AiOutlineMenu />
+            <AiOutlineMenu/>
           </Box>
           {/* ----------------------- (LOGO) ----------------------- */}
           <Heading fontSize={"23px"} color={"#ffffff"} mb="1">
