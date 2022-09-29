@@ -208,9 +208,9 @@ const Allfeeds = (props) => {
                   className={style.MiddleRow}
                 >
                   <Input type="file" id="upload" hidden />
-                  <label for="upload">File</label>
+                  <label htmlFor="upload">File</label>
                   <Input type="file" id="upload" hidden />
-                  <label for="upload">New document</label>
+                  <label htmlFor="upload">New document</label>
                   <Text>Mention</Text>
                   <Text _hover={{ color: "#7b8691" }}>Mention</Text>
                   <Text _hover={{ color: "#7b8691" }}>Quote</Text>

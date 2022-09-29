@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./left.module.css";
-import { Box, color, Drawer, DrawerBody, DrawerContent, Text } from "@chakra-ui/react";
+import { Box, Drawer, DrawerBody, DrawerContent, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { BiPlay } from "react-icons/bi";
 

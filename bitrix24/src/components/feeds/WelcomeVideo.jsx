@@ -71,9 +71,9 @@ const WelcomeVideo = () => {
               height="415"
               src="https://www.youtube.com/embed/tAMiCw-5MJE"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </Box>
 
@@ -214,9 +214,9 @@ const WelcomeVideo = () => {
                   mt={"0"}
                 >
                   <Input type="file" id="upload" hidden />
-                  <label for="upload">File</label>
+                  <label htmlFor="upload">File</label>
                   <Input type="file" id="upload" hidden />
-                  <label for="upload">New document</label>
+                  <label htmlFor="upload">New document</label>
                   <Text>Mention</Text>
                   <Text _hover={{ color: "#7b8691" }}>Mention</Text>
                   <Text _hover={{ color: "#7b8691" }}>Quote</Text>
