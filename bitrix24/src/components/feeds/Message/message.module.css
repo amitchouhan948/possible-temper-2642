@@ -1,0 +1,16 @@
+.msgRow > p:active {
+  color: blue;
+  text-decoration: underline;
+}
+
+.MiddleRow {
+  color: #7b8691c7;
+}
+.MiddleRow > p:hover {
+  color: #6c747d;
+}
+
+label:hover {
+  color: #6c747d;
+  cursor: pointer;
+}
