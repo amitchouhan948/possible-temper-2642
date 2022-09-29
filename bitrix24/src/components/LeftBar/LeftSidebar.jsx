@@ -15,7 +15,7 @@ export function LeftSidebar() {
         <Box
           // border="1px solid blue"
           height={"100vh"}
-          position="fixed"
+          position="absolute"
           top={0}
           pt="7"
         >

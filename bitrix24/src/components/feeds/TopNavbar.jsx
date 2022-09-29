@@ -17,28 +17,8 @@ import { IoMdFlag } from "react-icons/io";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 
-const TopNavbar = () => {
-  const [hours, setHours] = useState(Number);
-  const [minutes, setMinute] = useState(Number);
-  const [seconds, setSeconds] = useState(Number);
-
-  //------------------=- time -=--------------
-  const time = new Date();
-  const hrs = time.getHours();
-  const min = time.getMinutes();
-  const sec = time.getSeconds();
-
-  setTimeout(() => {
-    setHours(hrs);
-  }, 1000);
-
-  setTimeout(() => {
-    setMinute(min);
-  }, 1000);
-
-  setTimeout(() => {
-    setSeconds(sec);
-  }, 1000);
+const TopNavbar = (props) => {
+  const { hours, minutes } = props;
 
   return (
     <div>
@@ -47,7 +27,7 @@ const TopNavbar = () => {
         justifyContent="space-between"
         alignItems={"center"}
         // ------(width for scroll) ----
-        w="1395px"
+        w="1360px"
         //------------------------------
         p="3"
         pr="10"
@@ -56,7 +36,7 @@ const TopNavbar = () => {
       >
         <Box display={"none"} gap="6" alignItems={"center"}>
           <Box fontSize={"23px"} color="#ffffff">
-            <AiOutlineMenu/>
+            <AiOutlineMenu />
           </Box>
           {/* ----------------------- (LOGO) ----------------------- */}
           <Heading fontSize={"23px"} color={"#ffffff"} mb="1">
@@ -102,7 +82,8 @@ const TopNavbar = () => {
             display="flex"
           >
             <Text>
-              {hours % 12}:{minutes}
+              {hours == 12 ? "12" : hours % 12}:
+              {minutes <= 9 ? "0" + minutes : minutes}
             </Text>
             <span
               style={{
@@ -162,7 +143,9 @@ const TopNavbar = () => {
               bg: "#dca22f",
             }}
           >
-            <BiRocket />
+            <Box bg={"#7b869194"} p={1} borderRadius="50px" mr="1">
+              <BiRocket />
+            </Box>
             Upgrade
             <BiPlay
               style={{

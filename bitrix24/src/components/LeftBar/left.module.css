@@ -1,20 +1,7 @@
 .scroll {
-    background: grey;
-    margin-top: 200px;
-    margin-bottom: 20px;
-    height: auto;
-  }
-  
-  ::-webkit-scrollbar {
-    width: 3px;
-    height: 20px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: rgb(80, 78, 78);
-    background-color: transparent;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: rgba(59, 59, 59, 0.2);
-  }
+  background: #7b869164;
+  margin-top: 200px;
+  margin-bottom: 20px;
+  height: auto;
+}
+

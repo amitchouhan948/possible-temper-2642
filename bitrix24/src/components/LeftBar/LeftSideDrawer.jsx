@@ -1,47 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./left.module.css";
-import {
-  Box,
-  Button,
-  Drawer,
-  DrawerBody,
-  DrawerContent,
-  Text,
-} from "@chakra-ui/react";
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
-// import items from "./db.json"
-// const fs = require("fs")
-const initItems = [
-  { id: 1, title: "Subsciption", status: true },
-  { id: 2, title: "Setting", status: true },
-  { id: 3, title: "CRM", status: true },
-  { id: 4, title: "Marketing", status: true },
-  { id: 5, title: "Sites and stores", status: true },
-  { id: 6, title: "Company", status: true },
-  { id: 7, title: "Automation", status: true },
-  { id: 8, title: "Market", status: true },
-  { id: 9, title: "Feed", status: true },
-  { id: 10, title: "Calender", status: true },
-  { id: 11, title: "Online documents", status: true },
-  { id: 12, title: "Bitrix24.Drive", status: true },
-  { id: 13, title: "Webmail", status: true },
-  { id: 14, title: "Tasks and Projects", status: false },
-  { id: 15, title: "Chat and Calls", status: false },
-];
+import { Box, color, Drawer, DrawerBody, DrawerContent, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import { BiPlay } from "react-icons/bi";
 
-export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
-  const [data, setData] = useState(initItems);
-  const [show, setShow] = useState(false);
-  const showAndHide = () => {
-    setShow(!show);
-  };
-  const handleToggle = (id) => {
-    const updateData = data.map((el) =>
-      el.id === id ? { ...el, status: !el.status } : el
-    );
-    setData(updateData);
-  };
-  useEffect(() => {}, []);
+export function LeftSideDrawer({ isOpen, onClose, btnRef }) {
+  const [Collaboration, setCollaboration] = useState(false);
+
   return (
     <>
       <Drawer
@@ -50,92 +15,95 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
         onClose={onClose}
         finalFocusRef={btnRef}
       >
-        {/* <DrawerOverlay /> */}
         <DrawerContent
-          //   border="1px solid yellow"
           bgColor={"#7b869164"}
-          marginTop="86px"
+          marginTop="80px"
           ml={"-50px"}
           p={"0px 0px 0px 50px"}
           overscrollY={"auto"}
           shadow="none"
           className={styles.scroll}
+          borderRightRadius="10px"
           color="#ffffff"
         >
-          {/* <DrawerCloseButton /> */}
-
-          <DrawerBody>
-            {/* <Input placeholder='Type here...' /> */}
-
-            {data.map((el, i) => {
-              return (
-                !el.status && (
-                  <Box display={"flex"} justifyContent="space-between">
-                    <Text key={i} mb="10px">
-                      {el.title}
-                    </Text>
-                    <Button
-                      color="black"
-                      onClick={() => handleToggle(el.id)}
-                      size={"xs"}
-                    >
-                      toggle
-                    </Button>
-                  </Box>
-                )
-              );
-            })}
-
-            {!show ? (
-              <Button mb={"40px"} color="black" onClick={showAndHide}>
-                More... <ChevronDownIcon />
-              </Button>
-            ) : (
-              <Text
-                textAlign={"center"}
-                border="1px solid gray"
-                borderRadius="2xl"
-                mb={"40px"}
-                mt="40px"
-              >
-                Hidden
-              </Text>
-            )}
-
-            {show &&
-              data.map((el, i) => {
-                return (
-                  el.status && (
-                    <Box display={"flex"} justifyContent="space-between">
-                      <Text key={i} mb="10px">
-                        {el.title}
-                      </Text>
-                      <Button
-                        onClick={() => handleToggle(el.id)}
-                        color="black"
-                        size={"xs"}
-                      >
-                        toggle
-                      </Button>
-                    </Box>
-                  )
-                );
-              })}
-            {show && (
-              <Button mb="20px" color="black" onClick={showAndHide}>
-                Hide <ChevronUpIcon />
-              </Button>
-            )}
-            <Text fontSize={"10px"} mb="20px">
+          <DrawerBody ml="6">
+            <Text
+              color={"black"}
+              textAlign="center"
+              borderRadius="10px"
+              fontsize="17px"
+              w="180px"
+              p={0}
+              pl="6"
+              bg="#7b8691"
+              display={"flex"}
+              gap="4"
+              onClick={() => setCollaboration(!Collaboration)}
+            >
+              Collaboration
+              <BiPlay
+                style={{
+                  rotate: ( Collaboration ? "90deg" : "0deg"),
+                  marginTop: "5px",
+                }}
+              />
+            </Text>
+            <Box
+              display={Collaboration ? "grid" : "none"}
+              gap="2"
+              mt={4}
+              fontSize={"17px"}
+              pt="3"
+              pb="3"
+              pl="2"
+              borderRadius={10}
+              bg="#7b8691"
+            >
+              <Text _hover={{ bg: "white", color:"black" }} pl="4" borderRadius={10} >Feed</Text>
+              <Text _hover={{ bg: "white", color:"black" }} pl="4" borderRadius={10} >Chat and Calls</Text>
+              <Text _hover={{ bg: "white", color:"black" }} pl="4" borderRadius={10} >Calender</Text>
+              <Text _hover={{ bg: "white", color:"black" }} pl="4" borderRadius={10} >Online documents</Text>
+              <Text _hover={{ bg: "white", color:"black" }} pl="4" borderRadius={10} >Bitrix24.Drive</Text>
+              <Text _hover={{ bg: "white", color:"black" }} pl="4" borderRadius={10} >Webmail</Text>
+              <Text _hover={{ bg: "white", color:"black" }} pl="4" borderRadius={10} >Workgroup</Text>
+            </Box>
+            <Box display={"grid"} gap="2" mt={4} fontSize={"17px"}>
+              <Text _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10} >Task and Projects</Text>
+              <Text _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10} >CRM</Text>
+              <Text _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10} >Marketing</Text>
+              <Text _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10} >Sites and stores</Text>
+              <Text _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10} >Company</Text>
+              <Text _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10} >Automation</Text>
+              <Text _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10} >Application</Text>
+              <Text _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10} >More</Text>
+            </Box>
+            <Text
+              _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10}
+              fontSize={"13px"}
+              mt="30px"
+              mb="10px"
+            >
               SITEMAP
             </Text>
-            <Text fontSize={"10px"} mb="20px">
+            <Text _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10}  fontSize={"13px"} mb="10px">
               CONFIGURE MENU
             </Text>
-            <Text fontSize={"10px"} mb="20px">
+            <Text _hover={{ bg: "#7b8691" }} pl="4" borderRadius={10}  fontSize={"13px"} mb="20px">
               INVITE USERS
             </Text>
-            <Button color="black">UPGRADE YOUR PLAN</Button>
+            <Text
+              color={"black"}
+              textAlign="center"
+              borderRadius="10px"
+              fontsize="17px"
+              w="180px"
+              p={1}
+              pl="2"
+              pr="2"
+              bg="white"
+            >
+              UPGRADE YOUR PLAN
+            </Text>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
