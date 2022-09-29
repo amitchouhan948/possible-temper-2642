@@ -4,13 +4,34 @@
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.10",
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+    "@chakra-ui/icons": "^2.0.10",
+=======
+>>>>>>> 288ebea1ee3004e20584dc24282ede1034693c07
+>>>>>>> 4c24ab75626a22a045d5d927e0e967c33b392ab1
+>>>>>>> e7db65939c70774eba559a6b5cd257026b4fe988
     "@chakra-ui/react": "^2.3.4",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
     "framer-motion": "^6.5.1",
+=======
+<<<<<<< HEAD
+    "framer-motion": "^7.4.0",
+=======
+<<<<<<< HEAD
+    "framer-motion": "^7.4.0",
+=======
+    "framer-motion": "^6.5.1",
+>>>>>>> 288ebea1ee3004e20584dc24282ede1034693c07
+>>>>>>> 4c24ab75626a22a045d5d927e0e967c33b392ab1
+>>>>>>> e7db65939c70774eba559a6b5cd257026b4fe988
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",

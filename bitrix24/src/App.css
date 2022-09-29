@@ -1,7 +1,22 @@
 .App {
   text-align: center;
+<<<<<<< HEAD
+  font-size: 40px;
+}
+.chakra-ui-light{
+  background-image: url('./image/website_background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  /* background: #39ccda; */
+}
+*{
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+=======
  background-image: url(./atmosphere2.jpg);
  background-repeat: no-repeat;
 background-size: cover;
 }
 
+>>>>>>> 4c24ab75626a22a045d5d927e0e967c33b392ab1
