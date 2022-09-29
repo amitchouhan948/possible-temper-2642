@@ -14,7 +14,14 @@ import cloud1 from "../StaticFiles/clouds1.svg";
 import cloud2 from "../StaticFiles/clouds2.svg";
 import clouds3 from "../StaticFiles/clouds3.svg";
 import google from "../StaticFiles/logos/google.png"
+import All_Inputs from "./signup_subcompo/Allnputs_signup";
+
 const Signup = () => {
+
+
+
+
+
   return (
     <>
       <Box className={styles.main_page}>
@@ -47,8 +54,8 @@ const Signup = () => {
           <Text>Enter email</Text>
 
 
-
           <Input className={styles.inpux1_box} />
+
           <Text className={styles.text}>
             By registering you confirm that you accept the Terms of Services and
             Privacy Policy
