@@ -8,20 +8,20 @@ import clouds3 from "../../StaticFiles/clouds3.svg";
 import styles from "./subcompo.module.css"
 const Loginleft = () => {
   return (
-    <div>
+
         
      
-        <Box className={styles.left_box}>
-          <Image src={cloud1} alt="bitrix24" className={styles.img1} />
-          <Image src={cloud2} alt="bitrix24" className={styles.img2} />
-          <Image src={clouds3} alt="bitrix24" className={styles.img3} />
+        <Box className={styles.left_box1}>
+          <Image src={cloud1} alt="bitrix24" className={styles.img11} />
+          <Image src={cloud2} alt="bitrix24" className={styles.img21} />
+          <Image src={clouds3} alt="bitrix24" className={styles.img31} />
 
-          <Box className={styles.f_box}>
-            <Image src={bitrixlogo} alt="bitrix24" className={styles.logo_img}/>
-            <Text>Back to Site</Text>
+          <Box className={styles.f_box1}>
+            <Image src={bitrixlogo} alt="bitrix24" className={styles.logo_img1}/>
+            <Text >Back to Site</Text>
           </Box>
 
-          <Box className={styles.middle_box}>
+          <Box className={styles.middle_box1}>
             <Text>
               Your company.<br/><span >United.</span>
             </Text>
@@ -29,7 +29,7 @@ const Loginleft = () => {
           </Box>
         </Box>
 
-    </div>
+
   )
 }
 

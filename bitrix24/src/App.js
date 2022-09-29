@@ -10,8 +10,8 @@ import Login from "./components/pages/login/Login"
 function App() {
   return (
     <div className="App">
-     {/* <Signup/> */}
-<Login/>
+     <Signup/>
+{/* <Login/> */}
     </div>
   );
 }

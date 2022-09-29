@@ -1,13 +1,9 @@
 /* ...........Main Login ................. */
 
-
-
-
-  
-  
-  
-
-
+.mainlogin{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 
@@ -15,6 +11,15 @@
 
 
 
+.mainlogin>:nth-child(1){
+  width: 42%;
+  position: fixed;
+}
+.mainlogin>:nth-child(2){
+  width: 58%;
+  position: absolute;
+  left: 42%
+}
 
 
 
