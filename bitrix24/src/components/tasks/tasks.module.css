@@ -1,0 +1,22 @@
+/* *{
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+} */
+
+
+.background{
+    height: 577.5px;
+    background-size: contain;
+    background-repeat: repeat;
+    background-image: url("./images/background.jpg");
+   /* background-position: fixed;  */
+}
+
+
+
+
+/* footer CSS */
+p{
+    font-size: 14px;
+    color: white;
+    align-self: center;
+}

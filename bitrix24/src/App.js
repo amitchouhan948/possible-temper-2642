@@ -1,13 +1,15 @@
 
 import './App.css';
-import Login from './pages/login/Login';
-import Signup from './pages/signup/Signup';
+import Tasks from './components/tasks/Tasks';
+// import Login from './pages/login/Login';
+
 
 function App() {
   return (
     <div className="App">
-     <Signup/>
+     {/* <Signup /> */}
      {/* <Login/> */}
+     <Tasks />
     </div>
   );
 }
