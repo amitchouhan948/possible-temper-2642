@@ -139,6 +139,7 @@ const TopNavbar = (props) => {
           <Button
             bg={"#eba51c"}
             color="#ffffff"
+            borderRadius={20}
             _hover={{
               bg: "#dca22f",
             }}
@@ -157,6 +158,8 @@ const TopNavbar = (props) => {
           <Button
             bg={"#14bfd5"}
             color="#ffffff"
+            borderRadius={20}
+            mr="5"
             _hover={{
               bg: "#39ccda",
             }}
