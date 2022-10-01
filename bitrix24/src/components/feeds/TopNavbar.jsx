@@ -26,9 +26,9 @@ const TopNavbar = (props) => {
         display={"flex"}
         justifyContent="space-between"
         alignItems={"center"}
-        // ------(width for scroll) ----
+        // ------(width for scroll) ----------
         w="1360px"
-        //------------------------------
+        //-----------------------------------
         p="3"
         pr="10"
         pl="4"
