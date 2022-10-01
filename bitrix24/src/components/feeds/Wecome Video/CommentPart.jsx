@@ -3,7 +3,7 @@ import React from 'react'
 import { BsFillPersonFill } from 'react-icons/bs';
 
 const CommentPart = (props) => {
-  const { day, time, email, message } = props;
+  const { day, time, email, message, id, handleDelete2 } = props;
 
   return (
     <div>
@@ -45,6 +45,10 @@ const CommentPart = (props) => {
                   {day} {time}
                 </span>
               </Text>
+
+               {/* ------------- (Remove button) ------------- */}
+               <Text fontSize={"15px"} fontWeight={500} onClick={()=> handleDelete2(id)} p="0" float="right" mt="-28px" mr="-30px" color={"grey"} _hover={{color:"black",cursor:"pointer"}}>x</Text>
+          
               <Text
                 color={"grey"}
                 fontSize={16}

@@ -12,7 +12,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import LikeImg from "./Like.png";
-import { getComments2, sendComments2 } from "../Api/Api";
+import { deleteComments2, getComments2, sendComments2 } from "../Api/Api";
 import CommentPart from "./CommentPart";
 
 const WelcomeVideo = (props) => {
@@ -47,6 +47,17 @@ const WelcomeVideo = (props) => {
       });
     setInput("");
   };
+
+  const handleDelete2 = (id) =>{
+    deleteComments2(id)
+      .then((res) => {
+        ShowData();
+      })
+      .then((err) => {
+        console.log(err);
+      });
+    setInput("");
+  }
 
   return (
     <div>
@@ -189,7 +200,7 @@ const WelcomeVideo = (props) => {
           {/* ------------------ (Comment Component) --------------- */}
           {comments2.map((item) => (
             <Grid key={item.id} mt="-2" w="50%" ml={"8%"}>
-              <CommentPart {...item} />
+              <CommentPart {...item} handleDelete2={handleDelete2}/>
             </Grid>
           ))}
 

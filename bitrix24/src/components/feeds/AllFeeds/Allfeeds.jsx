@@ -1,6 +1,7 @@
 import { SearchIcon, SettingsIcon } from "@chakra-ui/icons";
 import {
   Box,
+  Button,
   Grid,
   Input,
   InputGroup,
@@ -13,12 +14,13 @@ import React from "react";
 import FeedsDiv from "./FeedsDiv";
 
 const Allfeeds = (props) => {
-  const { hours, minutes, month, date, message, setFilter } = props;
+  const { hours, minutes, month, date, message, setFilter, handleDelete } = props;
 
   return (
     <div>
       <SimpleGrid width="100%" mt={0} pt="3" pb="5" borderRadius="10">
         {/* --------------------- (Feed and input filter) */}
+       
         <Box
           pl="4"
           pr="4"
@@ -54,22 +56,24 @@ const Allfeeds = (props) => {
 
         {message.map((item) => (
           <Grid
-            key={item.id}
-            bg={"#ffffff"}
+          key={item.id}
+          bg={"#ffffff"}
             width="100%"
             mt={4}
             pt="3"
             pb="5"
             borderRadius="10"
-          >
+            >
             <FeedsDiv
               {...item}
               minutes={minutes}
               hours={hours}
               month={month}
               date={date}
+              handleDelete={handleDelete}
             />
           </Grid>
+          
         ))}
       </SimpleGrid>
     </div>

@@ -3,7 +3,7 @@ import React from 'react'
 import { BsFillPersonFill } from 'react-icons/bs';
 
 const Comments = (props) => {
-  const { day, time, email, message } = props;
+  const { day, time, email, message, id, handleDelete1 } = props;
 
   return (
     <div>
@@ -53,6 +53,11 @@ const Comments = (props) => {
               >
                 {message}
               </Text>
+              
+              
+               {/* ------------- (Remove button) ------------- */}
+              <Text fontSize={"15px"} fontWeight={500} onClick={()=> handleDelete1(id)} p="0" float="right" mt="-52px" mr="-8" color={"grey"} _hover={{color:"black",cursor:"pointer"}}>x</Text>
+          
             </Box>
           </Box>
     </div>

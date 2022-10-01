@@ -14,10 +14,10 @@ import { BsFillPersonFill } from "react-icons/bs";
 import LikeImg from "./Like.png";
 import style from "./Allfeed.module.css";
 import Comments from "./Comments";
-import { getComments1, sendComments1 } from "../Api/Api";
+import { deleteComments1, getComments1, sendComments1 } from "../Api/Api";
 
 const FeedsDiv = (props) => {
-  const { day, time, email, message } = props;
+  const { day, time, email,id, message, handleDelete } = props;
 
   const [input, setInput] = useState(false);
   const [follow, setFollow] = useState(false);
@@ -50,6 +50,19 @@ const FeedsDiv = (props) => {
     setInput("");
   };
 
+const handleDelete1 = (id) =>{
+  deleteComments1(id)
+  .then((res) => {
+    ShowData();
+  })
+  .then((err) => {
+    console.log(err);
+  });
+setInput("");
+}
+
+
+
   return (
     <div>
       {" "}
@@ -71,13 +84,13 @@ const FeedsDiv = (props) => {
             <BsFillPersonFill />
           </Box>
           {/* --------- */}
-          <Box mt="6">
+          <Box w="100%" mt="6">
             <Text
               fontWeight={500}
               fontSize={16}
               color="#246ab1"
               textAlign={"left"}
-              cursor="pointer"
+              cursor="pointer"              
             >
               {email}{" "}
               <span style={{ color: "grey" }}>{">"} To all employees</span>
@@ -85,6 +98,12 @@ const FeedsDiv = (props) => {
             <Text color={"grey"} fontSize={13} textAlign={"left"}>
               {day} {time}
             </Text>
+          
+          
+           {/* ------------- (Remove button) ------------- */}
+          <Text fontSize={"20px"} fontWeight={500} onClick={()=> handleDelete(id)} p="0" float="right" mt="-80px" mr="3" color={"grey"} _hover={{color:"black",cursor:"pointer"}}>x</Text>
+          
+          
           </Box>
         </Box>
 
@@ -141,7 +160,7 @@ const FeedsDiv = (props) => {
         {/* ------------------ (Comment Component) --------------- */}
         {comments.map((item) => (
           <Grid key={item.id} mt="-2" w="50%" ml={"8%"}>
-            <Comments {...item} />
+            <Comments {...item} handleDelete1={handleDelete1} />
           </Grid>
         ))}
 

@@ -5,7 +5,7 @@ import axios from "axios";
 
 //---------------- Right Side Data ----------------
 export const getMessage2 = () => {
-  return axios.get(`http://localhost:8080/message`);
+  return axios.get(`https://aqueous-fjord-81124.herokuapp.com/message`);
 };
 
 
@@ -14,8 +14,14 @@ export const getMessage2 = () => {
 
 // ------------------- Top message Feeds------------------
 export const getMessage = (filter) => {
-  return axios.get(`http://localhost:8080/message/${filter}`);
+  return axios.get(`https://aqueous-fjord-81124.herokuapp.com/message?q=${filter}`);
 };
+
+// ---------------------- Delete -------------
+export const deleteMessage = (id) => {
+  return axios.delete(`https://aqueous-fjord-81124.herokuapp.com/message/${id}`);
+};
+
 
 export const sendMessage = (value, props) => {
   let mnth = [
@@ -35,7 +41,7 @@ export const sendMessage = (value, props) => {
 
   const { hours, minutes, month, date } = props;
 
-  return axios.post(`http://localhost:8080/message`, {
+  return axios.post(`https://aqueous-fjord-81124.herokuapp.com/message`, {
     day: `${date} ${mnth[month]}`,
     time: `${hours == 12 ? "12" : hours % 12}:${
       minutes <= 9 ? "0" + minutes : minutes
@@ -53,7 +59,12 @@ export const sendMessage = (value, props) => {
 // ----------- Feeds Comments --------------
 
 export const getComments1 = () => {
-  return axios.get(`http://localhost:8080/comments1`);
+  return axios.get(`https://aqueous-fjord-81124.herokuapp.com/comments1`);
+};
+
+
+export const deleteComments1 = (id) => {
+  return axios.delete(`https://aqueous-fjord-81124.herokuapp.com/comments1/${id}`);
 };
 
 export const sendComments1 = (value, props) => {
@@ -74,7 +85,7 @@ export const sendComments1 = (value, props) => {
 
   const { hours, minutes, month, date } = props;
 
-  return axios.post(`http://localhost:8080/comments1`, {
+  return axios.post(`https://aqueous-fjord-81124.herokuapp.com/comments1`, {
     day: `${date} ${mnth[month]}`,
     time: `${hours == 12 ? "12" : hours % 12}:${
       minutes <= 9 ? "0" + minutes : minutes
@@ -91,7 +102,11 @@ export const sendComments1 = (value, props) => {
 // ----------- Youtube Comment --------------
 
 export const getComments2 = () => {
-  return axios.get(`http://localhost:8080/comments2`);
+  return axios.get(`https://aqueous-fjord-81124.herokuapp.com/comments2`);
+};
+
+export const deleteComments2 = (id) => {
+  return axios.delete(`https://aqueous-fjord-81124.herokuapp.com/comments2/${id}`);
 };
 
 export const sendComments2 = (value, props) => {
@@ -112,7 +127,7 @@ export const sendComments2 = (value, props) => {
 
   const { hours, minutes, month, date } = props;
 
-  return axios.post(`http://localhost:8080/comments2`, {
+  return axios.post(`https://aqueous-fjord-81124.herokuapp.com/comments2`, {
     day: `${date} ${mnth[month]}`,
     time: `${hours == 12 ? "12" : hours % 12}:${
       minutes <= 9 ? "0" + minutes : minutes

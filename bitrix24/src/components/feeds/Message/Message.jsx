@@ -9,7 +9,7 @@ import {
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Allfeeds from "../AllFeeds/Allfeeds";
-import { getMessage, sendMessage } from "../Api/Api";
+import { deleteMessage, getMessage, sendMessage } from "../Api/Api";
 import style from "./message.module.css";
 
 const Message = (props) => {
@@ -45,6 +45,17 @@ const Message = (props) => {
       });
     setInput("");
   };
+
+  const handleDelete = (id) =>{
+    deleteMessage(id)
+    .then((res) => {
+      ShowData();
+    })
+    .then((err) => {
+      console.log(err);
+    });
+  setInput("");
+  }
 
   return (
     <div>
@@ -191,6 +202,7 @@ const Message = (props) => {
         month={month}
         date={date}
         setFilter={setFilter}
+        handleDelete={handleDelete}
       />
     </div>
   );

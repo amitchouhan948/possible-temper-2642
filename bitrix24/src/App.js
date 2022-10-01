@@ -1,5 +1,4 @@
 import './App.css';
-import Feeds from './components/feeds/Feeds';
 import AllRouts from './Routs/AllRouts';
 
 function App() {
