@@ -1,8 +1,7 @@
 /* ...........Main Login ................. */
 
-.mainlogin{
-  display: flex;
-  justify-content: space-between;
+.mainsignup{
+
 }
 
 
@@ -11,11 +10,11 @@
 
 
 
-.mainlogin>:nth-child(1){
+.mainsignup>:nth-child(1){
   width: 42%;
   position: fixed;
 }
-.mainlogin>:nth-child(2){
+.mainsignup>:nth-child(2){
   width: 58%;
   position: absolute;
   left: 42%

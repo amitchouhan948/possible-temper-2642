@@ -1,0 +1,210 @@
+  /* =====================Rightside components=========================== */
+
+
+
+  .right_box {
+    width: 100%;
+    /* border: 1px solid rgb(252, 84, 84); */
+    height: auto;
+    /* border: 1px solid red; */
+  }
+
+
+  .hrline{
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .right_box > :nth-child(1) {
+    font-size: 31px;
+    padding: 20px;
+    margin-bottom: -10px;
+
+  }
+  .right_box > :nth-child(3) {
+    font-size: 16px;
+    /* padding: 20px; */
+  }
+
+
+  .errormassage{
+    width: 50%;
+    margin: auto;
+
+    text-align: center;
+  }
+.errormassage>*{
+  border-radius: 15px;
+}
+
+.input_filed1{
+  text-align: start;
+  padding: 25px;
+  width: 70%;
+  border-radius: 0px;
+  font-size: 18px;
+  outline: none;
+}
+
+
+
+
+
+  .text {
+
+    font-size: 14px;
+    color: grey;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    line-height: 30px;
+    text-align: start;
+  }
+  
+  .text>span{
+    color: #27a3f8;
+  }
+
+.form_controls>:nth-child(1){
+font-size: 20px;
+line-height: 26px;
+ width: 70%;
+ font-weight: lighter;
+ margin: auto;
+ /* font-family:sans-serif; */
+color: grey;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ /* font-weight: 200; */
+
+}
+.form_controls>:nth-child(3){
+  font-size: 20px;
+  line-height: 26px;
+ width: 70%;
+ margin: auto;
+ color: grey;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ font-weight: 200;
+}
+
+  .check_box {
+    display: flex;
+    flex-direction: column;
+    width: 67%;
+    color: grey;
+    line-height: 25px;
+    margin: auto;
+  }
+  
+  .btn_box {
+    padding: 15px;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin: auto;
+  }
+  .btn_box > button {
+    border-radius: 70PX;
+    padding: 25PX 35PX 25PX 35PX;
+
+   
+  }
+  .btn_box > :nth-child(1) {
+    background: #9dcf00;
+    color: white;
+  }
+
+  .haveaccounttext{
+    margin-top: 20px;
+    color: grey;
+  }
+  .haveaccounttext>*{
+    margin-top: 20px;
+    color:  #27a3f8;
+    
+  }
+  .bottom_text {
+    margin-top: 120px;
+    margin-bottom: 80px;
+    font-size: 14px;
+    color: grey;
+  }
+  .bottom_text>span{
+    color: #27a3f8;
+    cursor: pointer;
+  }
+  .check_text{
+    font-size: 14px;
+  }
+
+  .needhelp{
+    color: #27a3f8;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+
+
+
+  /* ...........social icons....... */
+/* 
+  .btn_google {
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 20px;
+      } */
+
+      .ion_box{
+/* background: grey; */
+display: flex;
+width: 45%;
+
+height: 70px;
+align-items: center;
+padding: 20px;
+margin: auto;
+margin-top: 20px;
+justify-content: space-between;
+      }
+      .imgicon{
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+      .imgicon:hover{
+        transform: scale(1.1);
+        transition:0.4s ease-in-out;
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+        cursor: pointer;
+  
+      }
+
+
+    /* .......goolebtn only..... */
+    .googlebox{
+      width: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 8px;
+    }
+    .googlebox>:nth-child(1){
+      width: 25%;
+      height: 90%;
+    }
+.googlebox:hover{
+  transform: scale(1.1);
+  transition:0.4s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+
+}
+    /* ........... */

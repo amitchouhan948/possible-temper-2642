@@ -32,7 +32,7 @@ const Feeds = () => {
 
   return (
     <div>
-      <SimpleGrid w="1518px">
+      <SimpleGrid w="100%">
         <TopNavbar minutes={minutes} hours={hours} />
         <LeftSidebar />
 
