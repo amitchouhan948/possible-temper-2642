@@ -5,7 +5,6 @@ import AllRouts from './Routs/AllRouts';
 function App() {
   return (
     <div className="App">
-      
      <AllRouts/>
     </div>
   );
