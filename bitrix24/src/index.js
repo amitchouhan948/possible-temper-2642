@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -22,27 +21,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ChakraProvider>
-<<<<<<< HEAD
       <App />
     </ChakraProvider>
-=======
-    <App />
-    </ChakraProvider>
-=======
->>>>>>> e7db65939c70774eba559a6b5cd257026b4fe988
-import { ChakraProvider } from '@chakra-ui/react'
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-<ChakraProvider>  
-    <App />
-</ChakraProvider>
-<<<<<<< HEAD
-=======
-
->>>>>>> 288ebea1ee3004e20584dc24282ede1034693c07
->>>>>>> 4c24ab75626a22a045d5d927e0e967c33b392ab1
->>>>>>> e7db65939c70774eba559a6b5cd257026b4fe988
   </React.StrictMode>
 );
 

@@ -10,10 +10,10 @@ export function LeftSidebar() {
   return (
     <>
       <HStack
-      // border="1px solid red"
+      border="1px solid red"
       >
         <Box
-          // border="1px solid blue"
+          border="1px solid blue"
           height={"100vh"}
           position="absolute"
           top={0}

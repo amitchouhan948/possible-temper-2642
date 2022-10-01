@@ -8,6 +8,7 @@ import {
   InputRightElement,
   Text,
   Button,
+  HStack,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { BsFillPersonFill } from "react-icons/bs";
@@ -16,12 +17,17 @@ import { HiPencil } from "react-icons/hi";
 import { IoMdFlag } from "react-icons/io";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
+import { LeftSidebar } from "../LeftSidebar/LeftSidebar";
 
 const TopNavbar = (props) => {
   const { hours, minutes } = props;
+  console.log(props)
 
   return (
     <div>
+      {/* changes Hstack */}
+      <HStack alignItems={"flex-start"}>  
+      {/* <LeftSidebar /> */}
       <SimpleGrid
         display={"flex"}
         justifyContent="space-between"
@@ -32,8 +38,9 @@ const TopNavbar = (props) => {
         p="3"
         pr="10"
         pl="4"
-        ml={36}
+        // ml={36}
       >
+        
         <Box display={"none"} gap="6" alignItems={"center"}>
           <Box fontSize={"23px"} color="#ffffff">
             <AiOutlineMenu />
@@ -171,6 +178,8 @@ const TopNavbar = (props) => {
           </Button>
         </Box>
       </SimpleGrid>
+      </HStack>
+      
     </div>
   );
 };
