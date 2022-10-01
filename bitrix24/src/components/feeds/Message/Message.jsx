@@ -13,6 +13,7 @@ import { deleteMessage, getMessage, sendMessage } from "../Api/Api";
 import style from "./message.module.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../config/Firebase";
+import { Link } from "react-router-dom";
 
 const Message = (props) => {
   const { hours, minutes, month, date } = props;
@@ -84,7 +85,9 @@ const Message = (props) => {
           <Text color={"blue"} textDecoration="underline">
             MESSAGE
           </Text>
-          <Text>TASK</Text>
+          <Link to="/task">
+            <Text>TASK</Text>
+          </Link>
           <Text>EVENT</Text>
           <Text>POLL</Text>
           <Text>MORE</Text>
