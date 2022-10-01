@@ -1,0 +1,126 @@
+.userlogin{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  /* ............userlogin main right......... */
+
+.wrapbox{
+
+}
+.title{
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.horizontalline{
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.horizontalline2{
+    width: 70%;
+    margin: auto;
+   
+    margin-bottom: 20px;
+}
+
+
+.wrapbox>:nth-child(3){
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: grey;
+}
+.wrapbox>:nth-child(4){
+    margin-top: 70px;
+    margin-bottom: 20px;
+ 
+}
+.wrapbox>:nth-child(5){
+   
+    width: 70%;
+text-align: start;
+margin: auto;
+margin-top: 70px;
+color: gray;
+ 
+}
+
+
+  
+  
+  
+  
+  .userlogin>:nth-child(1){
+    width: 42%;
+    position: fixed;
+  }
+  .userlogin>:nth-child(2){
+    width: 58%;
+    position: absolute;
+    left: 42%
+  }
+  
+  
+  
+
+
+
+
+
+
+  /* ......userInfodiv......... */
+
+  .info_box{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #2fc6f6;
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    margin: auto;
+  }
+
+  .info_box>:nth-child(1){
+    width: 15%;
+    height: 40%;
+    border-radius: 60px;
+  }
+  .info_box>:nth-child(2){
+width: 60%;
+  }
+
+
+
+  /* ..............user id login.............. */
+
+  .idbox{
+    display: flex;
+    align-items: center;
+    /* border: 1px solid  #2fc6f6; */
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  .idbox>:nth-child(1){
+color: #2fc6f6;
+font-size:25px;
+
+
+  }
+  .idbox>:nth-child(2){
+color: #ffffff;
+background: #2fc6f6;
+padding: 15px 25px 15px 25px;
+border-radius: 20px;
+cursor: pointer;
+
+  }

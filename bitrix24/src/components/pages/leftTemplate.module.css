@@ -1,0 +1,80 @@
+/* ............Left side................ */
+
+  
+.left_box1 {
+    width: 100%;
+    /* border: 1px solid black; */
+    height: 100vh;
+    /* position: relative; */
+    /* border: 1px solid rgb(0, 0, 0); */
+    background: #2fc6f6;
+  }
+  
+  .img11 {
+    position: absolute;
+    top: 200px;
+    width: 1000px;
+  }
+  .img21 {
+    position: absolute;
+    top: 100px;
+    width: 200px;
+  }
+  .img31 {
+    position: absolute;
+    top: 500px;
+    left: 320px;
+    width: 200px;
+  }
+  
+  .f_box1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 100px;
+    left: 120px;
+  }
+  
+  .f_box1>:nth-child(1){
+    position: absolute;
+left: -50px;
+top: -40px;
+  }
+  
+  .f_box1>:nth-child(2){
+    position: absolute;
+ left: 340px;
+ display: flex;
+ justify-content: space-between;
+ width: 110px;
+ align-items: center;
+ color: white;
+  }
+  .back_arrow1{
+    position: absolute;
+    left:-30px;
+    
+    }
+.back_text1:hover .back_arrow1{
+  left: -500px;
+}
+  .back_text1{
+    cursor: pointer;
+  }
+  .middle_box1 {
+    position: absolute;
+    top: 300px;
+    color: white;
+    left: 100px;
+    text-align: start;
+  }
+  
+  .middle_box1 > :nth-child(1) {
+    font-size: 60px;
+  }
+  .middle_box1 > :nth-child(2) {
+    font-size: 30px;
+  }
+  
+
