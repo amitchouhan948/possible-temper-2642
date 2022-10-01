@@ -6,19 +6,51 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import Allfeeds from "../AllFeeds/Allfeeds";
+import { getMessage, sendMessage } from "../Api/Api";
 import style from "./message.module.css";
 
-const Message = () => {
+const Message = (props) => {
+  const { hours, minutes, month, date } = props;
+
   const [input, setInput] = useState(false);
+  const [value, setValue] = useState("");
+  const [message, setMessage] = useState([]);
+  const [filter, setFilter] = useState("")
+
+
+  useEffect(() => {
+    ShowData();
+  }, [filter]);
+
+  const ShowData = () => {
+    getMessage(filter)
+      .then((res) => {
+        setMessage(res.data);
+      })
+      .then((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleAdd = () => {
+    sendMessage(value, props)
+      .then((res) => {
+        ShowData();
+      })
+      .then((err) => {
+        console.log(err);
+      });
+    setInput("");
+  };
 
   return (
     <div>
       <SimpleGrid
         bg={"#ffffff"}
-        width="73%"
-        ml="75px"
+        width="100%"
         mt={4}
         pt="3"
         pb="5"
@@ -62,6 +94,8 @@ const Message = () => {
           textAlign={"left"}
           ml="6"
           mt="5"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
           w={"90%"}
           display={input ? "block" : "none"}
           fontSize={"20"}
@@ -81,9 +115,9 @@ const Message = () => {
             className={style.MiddleRow}
           >
             <Input type="file" id="upload" hidden />
-            <label for="upload">File</label>
+            <label htmlFor="upload">File</label>
             <Input type="file" id="upload" hidden />
-            <label for="upload">New document</label>
+            <label htmlFor="upload">New document</label>
             <Text>Mention</Text>
             <Text>Quote</Text>
             <Text>Add tag</Text>
@@ -129,6 +163,7 @@ const Message = () => {
           {/* ----------------------- (Send - Cancel button) ------------------------------- */}
           <Box display={"flex"} gap="10" mt="5" ml="10">
             <Button
+              onClick={handleAdd}
               bg={"#3bc8f5"}
               color="white"
               fontSize={"14"}
@@ -149,6 +184,14 @@ const Message = () => {
           </Box>
         </Box>
       </SimpleGrid>
+      <Allfeeds
+        message={message}
+        minutes={minutes}
+        hours={hours}
+        month={month}
+        date={date}
+        setFilter={setFilter}
+      />
     </div>
   );
 };

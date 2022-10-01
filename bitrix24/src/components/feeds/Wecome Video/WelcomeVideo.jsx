@@ -9,20 +9,49 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
-import LikeImg from "../feeds/AllFeeds/Like.png";
+import LikeImg from "./Like.png";
+import { getComments2, sendComments2 } from "../Api/Api";
+import CommentPart from "./CommentPart";
 
-const WelcomeVideo = () => {
+const WelcomeVideo = (props) => {
   const [input, setInput] = useState(false);
   const [follow, setFollow] = useState(false);
   const [like, setLike] = useState(false);
   const [hide, setHide] = useState(false);
+  const [value, setValue] = useState("");
+  const [comments2, setComments2] = useState([]);
+
+  useEffect(() => {
+    ShowData();
+  }, []);
+
+  const ShowData = () => {
+    getComments2()
+      .then((res) => {
+        setComments2(res.data);
+      })
+      .then((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleAdd = () => {
+    sendComments2(value, props)
+      .then((res) => {
+        ShowData();
+      })
+      .then((err) => {
+        console.log(err);
+      });
+    setInput("");
+  };
 
   return (
     <div>
       {" "}
-      <SimpleGrid width="73%" ml="75px" mt={0} pt="3" pb="5" borderRadius="10">
+      <SimpleGrid width="100%" mt={0} pt="3" pb="5" borderRadius="10">
         {/* ----------------------- (Feeds Div) -------------- */}
 
         <Grid
@@ -35,7 +64,7 @@ const WelcomeVideo = () => {
         >
           {/* ------------------- (Profile and email) ----------- */}
 
-          <Box display={"flex"} alignItems="center" gap={"5"}>
+          <Box display={"flex"} alignItems="center" w="100%" gap={"5"}>
             <Box
               fontSize={"28px"}
               bg={"#7b8691"}
@@ -51,7 +80,13 @@ const WelcomeVideo = () => {
             </Box>
             {/* --------- */}
             <Box mt="6">
-              <Text fontSize={16} color="#246ab1" textAlign={"left"}>
+              <Text
+                fontSize={16}
+                color="#246ab1"
+                fontWeight={500}
+                textAlign={"left"}
+                cursor="pointer"
+              >
                 abhisheksolanki1020@gmail.com{" "}
                 <span style={{ color: "grey" }}>{">"} To all employees</span>
               </Text>
@@ -71,9 +106,9 @@ const WelcomeVideo = () => {
               height="415"
               src="https://www.youtube.com/embed/tAMiCw-5MJE"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </Box>
 
@@ -117,6 +152,7 @@ const WelcomeVideo = () => {
             display={"flex"}
             alignItems="center"
             gap="5"
+            cursor="pointer"
           >
             <Box mt={like ? "6" : "-.5"}>
               <Text
@@ -149,6 +185,17 @@ const WelcomeVideo = () => {
               <ViewIcon /> 1
             </Text>
           </Box>
+
+          {/* ------------------ (Comment Component) --------------- */}
+          {comments2.map((item) => (
+            <Grid key={item.id} mt="-2" w="50%" ml={"8%"}>
+              <CommentPart {...item} />
+            </Grid>
+          ))}
+
+
+
+          {/* -------------------- (Input Part) ----------------- */}
 
           <Grid ml="14" display={"flex"} alignItems="center">
             <Box
@@ -192,6 +239,8 @@ const WelcomeVideo = () => {
                 borderRadius="30"
               />
               <Textarea
+                onChange={(e) => setValue(e.target.value)}
+                value={value}
                 textAlign={"left"}
                 ml="6"
                 mt="0"
@@ -214,9 +263,9 @@ const WelcomeVideo = () => {
                   mt={"0"}
                 >
                   <Input type="file" id="upload" hidden />
-                  <label for="upload">File</label>
+                  <label htmlFor="upload">File</label>
                   <Input type="file" id="upload" hidden />
-                  <label for="upload">New document</label>
+                  <label htmlFor="upload">New document</label>
                   <Text>Mention</Text>
                   <Text _hover={{ color: "#7b8691" }}>Mention</Text>
                   <Text _hover={{ color: "#7b8691" }}>Quote</Text>
@@ -227,6 +276,7 @@ const WelcomeVideo = () => {
                 {/* ----------------------- (Send - Cancel button) ------------------------------- */}
                 <Box display={"flex"} gap="10" mt="5" ml="10">
                   <Button
+                    onClick={handleAdd}
                     bg={"#3bc8f5"}
                     color="white"
                     fontSize={"14"}
