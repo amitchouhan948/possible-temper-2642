@@ -39,17 +39,14 @@ const TopNavbar = (props) => {
         justifyContent="space-between"
         alignItems={"center"}
         // ------(width for scroll) ----------
-        w="1360px"
+        w="1460px"
         //-----------------------------------
         p="3"
         pr="10"
         pl="4"
-        ml={36}
+        ml={"60px"}
       >
-        <Box display={"none"} gap="6" alignItems={"center"}>
-          <Box fontSize={"23px"} color="#ffffff">
-            <AiOutlineMenu />
-          </Box>
+        <Box display={""} gap="6" alignItems={"center"}>
           {/* ----------------------- (LOGO) ----------------------- */}
           <Heading fontSize={"23px"} color={"#ffffff"} mb="1">
             Bitrix <span style={{ color: "#2fc6f7" }}>24</span>

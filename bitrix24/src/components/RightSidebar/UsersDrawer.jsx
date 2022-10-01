@@ -11,15 +11,21 @@ import {
   Text,
   useDisclosure,
   VStack,
+  Image,
 } from "@chakra-ui/react";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { BiMessageDetail, BiMessageRoundedDetail } from "react-icons/bi";
 import { IoIosNotifications, IoIosCall, IoIosSettings } from "react-icons/io";
 import { RiFeedbackFill } from "react-icons/ri";
+import {auth} from "../../config/Firebase";
+
 
 export function UsersDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const [user] = useAuthState(auth);
+
 
   return (
     <>
@@ -27,11 +33,12 @@ export function UsersDrawer() {
         ref={btnRef}
         colorScheme="teal"
         onClick={onOpen}
-        borderRadius={"50%"}
-        h="50px"
+        borderRadius={"50px"}
+        w="45px"
         bgColor="rgb(223, 83, 45)"
+        p="0"
       >
-        AT
+        <Image w="45px" border={"1px solid grey"} borderRadius={"50px"} src={user?.photoURL || "dd"}/>
       </Button>
       <Drawer
         isOpen={isOpen}

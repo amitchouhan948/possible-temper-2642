@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TopNavbar from "./TopNavbar";
-import { LeftSidebar } from "../LeftBar/LeftSidebar";
+import { LeftSidebar } from "../LeftSidebar/LeftSidebar";
 import Message from "./Message/Message";
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import WelcomeVideo from "./Wecome Video/WelcomeVideo";
@@ -35,7 +35,7 @@ const Feeds = () => {
     <div>
       <SimpleGrid w="100%">
         <TopNavbar minutes={minutes} hours={hours} />
-        <LeftSidebar />
+        {/* <LeftSidebar /> */}
 
         <Box display={"flex"} w="100%" justifyContent={"space-between"}>
           <Box ml="4%" w="71%">
@@ -58,6 +58,9 @@ const Feeds = () => {
           </Box>
         </Box>
 
+        <Box color={"white"} position={"fixed"}>
+          <LeftSidebar />
+        </Box>
         <Box
           border={"1px solid rgba(198, 186, 186, 0.274)"}
           bg="rgba(206, 201, 201, 0.16)"
