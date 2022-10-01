@@ -11,7 +11,7 @@ const Loginleft = () => {
 
   const navigate=useNavigate()
   const gobackhomepage=()=>{
-navigate("/Homepage")
+navigate("/")
   }
   return (
         <Box className={styles.left_box1}>
