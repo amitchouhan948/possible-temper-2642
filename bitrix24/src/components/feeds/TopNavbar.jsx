@@ -8,17 +8,29 @@ import {
   InputRightElement,
   Text,
   Button,
+  Image,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
-import { BsFillPersonFill } from "react-icons/bs";
 import { BiPlay, BiRocket } from "react-icons/bi";
 import { HiPencil } from "react-icons/hi";
 import { IoMdFlag } from "react-icons/io";
 import { AiOutlineMenu } from "react-icons/ai";
+import { signOut } from "firebase/auth";
+import { auth } from "../../config/Firebase";
+import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useState } from "react";
 
 const TopNavbar = (props) => {
   const { hours, minutes } = props;
+  const navigate = useNavigate();
+  const [user] = useAuthState(auth);
+  const [logout, setLogout] = useState(false);
+
+  const signoutAuth = async () => {
+    await signOut(auth);
+    navigate("/Login");
+  };
 
   return (
     <div>
@@ -115,6 +127,7 @@ const TopNavbar = (props) => {
             gap="3"
             p={"10px"}
             ml={"-10"}
+            onClick={() => setLogout(!logout)}
             _hover={{ bg: "#7b869164" }}
           >
             <Box
@@ -122,19 +135,27 @@ const TopNavbar = (props) => {
               bg={"#7b8691"}
               color={"#ffffff"}
               borderRadius="50px"
-              p="2"
+              p="0"
+              mt="1"
             >
-              <BsFillPersonFill />
+              <Image w="30px" borderRadius={"50px"} src={user?.photoURL || "dd"} alt="o" />
             </Box>
+
             <Text color={"#ffffff"} fontSize={"16px"} display="flex" gap={"3"}>
-              abhisheksolanki1020...
+              {user?.email}
               <BiPlay
-                style={{
-                  rotate: "90deg",
-                  marginTop: "6px",
-                }}
+                style={{ rotate: logout ? "0deg" : "90deg", marginTop: "6px" }}
               />
             </Text>
+
+            {/* ---------Log Out--------- */}
+            <Button
+              display={logout ? "block" : "none"}
+              borderRadius={20}
+              onClick={signoutAuth}
+            >
+              LogOut
+            </Button>
           </Box>
           <Button
             bg={"#eba51c"}

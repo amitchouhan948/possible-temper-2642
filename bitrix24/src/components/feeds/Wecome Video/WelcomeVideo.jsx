@@ -14,6 +14,12 @@ import { BsFillPersonFill } from "react-icons/bs";
 import LikeImg from "./Like.png";
 import { deleteComments2, getComments2, sendComments2 } from "../Api/Api";
 import CommentPart from "./CommentPart";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../config/Firebase";
+
+
+
+
 
 const WelcomeVideo = (props) => {
   const [input, setInput] = useState(false);
@@ -22,6 +28,7 @@ const WelcomeVideo = (props) => {
   const [hide, setHide] = useState(false);
   const [value, setValue] = useState("");
   const [comments2, setComments2] = useState([]);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     ShowData();
@@ -38,7 +45,7 @@ const WelcomeVideo = (props) => {
   };
 
   const handleAdd = () => {
-    sendComments2(value, props)
+    sendComments2(value, props,user)
       .then((res) => {
         ShowData();
       })

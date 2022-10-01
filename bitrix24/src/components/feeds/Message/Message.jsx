@@ -11,6 +11,8 @@ import { useState } from "react";
 import Allfeeds from "../AllFeeds/Allfeeds";
 import { deleteMessage, getMessage, sendMessage } from "../Api/Api";
 import style from "./message.module.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../config/Firebase";
 
 const Message = (props) => {
   const { hours, minutes, month, date } = props;
@@ -18,8 +20,8 @@ const Message = (props) => {
   const [input, setInput] = useState(false);
   const [value, setValue] = useState("");
   const [message, setMessage] = useState([]);
-  const [filter, setFilter] = useState("")
-
+  const [filter, setFilter] = useState("");
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     ShowData();
@@ -36,7 +38,7 @@ const Message = (props) => {
   };
 
   const handleAdd = () => {
-    sendMessage(value, props)
+    sendMessage(value, props, user)
       .then((res) => {
         ShowData();
       })
@@ -46,16 +48,16 @@ const Message = (props) => {
     setInput("");
   };
 
-  const handleDelete = (id) =>{
+  const handleDelete = (id) => {
     deleteMessage(id)
-    .then((res) => {
-      ShowData();
-    })
-    .then((err) => {
-      console.log(err);
-    });
-  setInput("");
-  }
+      .then((res) => {
+        ShowData();
+      })
+      .then((err) => {
+        console.log(err);
+      });
+    setInput("");
+  };
 
   return (
     <div>

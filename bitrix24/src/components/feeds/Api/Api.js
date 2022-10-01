@@ -1,29 +1,25 @@
 import axios from "axios";
 
-
-
-
 //---------------- Right Side Data ----------------
 export const getMessage2 = () => {
   return axios.get(`https://aqueous-fjord-81124.herokuapp.com/message`);
 };
 
-
-
-
-
 // ------------------- Top message Feeds------------------
 export const getMessage = (filter) => {
-  return axios.get(`https://aqueous-fjord-81124.herokuapp.com/message?q=${filter}`);
+  return axios.get(
+    `https://aqueous-fjord-81124.herokuapp.com/message?q=${filter}`
+  );
 };
 
 // ---------------------- Delete -------------
 export const deleteMessage = (id) => {
-  return axios.delete(`https://aqueous-fjord-81124.herokuapp.com/message/${id}`);
+  return axios.delete(
+    `https://aqueous-fjord-81124.herokuapp.com/message/${id}`
+  );
 };
 
-
-export const sendMessage = (value, props) => {
+export const sendMessage = (value, props, user) => {
   let mnth = [
     "January",
     "February",
@@ -46,15 +42,10 @@ export const sendMessage = (value, props) => {
     time: `${hours == 12 ? "12" : hours % 12}:${
       minutes <= 9 ? "0" + minutes : minutes
     } ${hours >= 12 ? "pm" : "am"}`,
-    email: "abhishek@gmail.com",
+    email: user.email || "abhishek@gmail.com",
     message: value,
   });
 };
-
-
-
-
-
 
 // ----------- Feeds Comments --------------
 
@@ -62,12 +53,13 @@ export const getComments1 = () => {
   return axios.get(`https://aqueous-fjord-81124.herokuapp.com/comments1`);
 };
 
-
 export const deleteComments1 = (id) => {
-  return axios.delete(`https://aqueous-fjord-81124.herokuapp.com/comments1/${id}`);
+  return axios.delete(
+    `https://aqueous-fjord-81124.herokuapp.com/comments1/${id}`
+  );
 };
 
-export const sendComments1 = (value, props) => {
+export const sendComments1 = (value, props, user) => {
   let mnth = [
     "January",
     "February",
@@ -90,14 +82,10 @@ export const sendComments1 = (value, props) => {
     time: `${hours == 12 ? "12" : hours % 12}:${
       minutes <= 9 ? "0" + minutes : minutes
     } ${hours >= 12 ? "pm" : "am"}`,
-    email: "abhishek@gmail.com",
+    email: user.email || "abhishek@gmail.com",
     message: value,
   });
 };
-
-
-
-
 
 // ----------- Youtube Comment --------------
 
@@ -106,10 +94,12 @@ export const getComments2 = () => {
 };
 
 export const deleteComments2 = (id) => {
-  return axios.delete(`https://aqueous-fjord-81124.herokuapp.com/comments2/${id}`);
+  return axios.delete(
+    `https://aqueous-fjord-81124.herokuapp.com/comments2/${id}`
+  );
 };
 
-export const sendComments2 = (value, props) => {
+export const sendComments2 = (value, props, user) => {
   let mnth = [
     "January",
     "February",
@@ -132,7 +122,7 @@ export const sendComments2 = (value, props) => {
     time: `${hours == 12 ? "12" : hours % 12}:${
       minutes <= 9 ? "0" + minutes : minutes
     } ${hours >= 12 ? "pm" : "am"}`,
-    email: "abhishek@gmail.com",
+    email: user.email || "abhishek@gmail.com",
     message: value,
   });
 };

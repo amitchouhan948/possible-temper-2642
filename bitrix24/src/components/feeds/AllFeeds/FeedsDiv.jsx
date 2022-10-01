@@ -15,15 +15,18 @@ import LikeImg from "./Like.png";
 import style from "./Allfeed.module.css";
 import Comments from "./Comments";
 import { deleteComments1, getComments1, sendComments1 } from "../Api/Api";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../config/Firebase";
 
 const FeedsDiv = (props) => {
-  const { day, time, email,id, message, handleDelete } = props;
+  const { day, time, email, id, message, handleDelete } = props;
 
   const [input, setInput] = useState(false);
   const [follow, setFollow] = useState(false);
   const [like, setLike] = useState(false);
   const [value, setValue] = useState("");
   const [comments, setComments] = useState([]);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     ShowData();
@@ -40,7 +43,7 @@ const FeedsDiv = (props) => {
   };
 
   const handleAdd = () => {
-    sendComments1(value, props)
+    sendComments1(value, props, user)
       .then((res) => {
         ShowData();
       })
@@ -50,18 +53,16 @@ const FeedsDiv = (props) => {
     setInput("");
   };
 
-const handleDelete1 = (id) =>{
-  deleteComments1(id)
-  .then((res) => {
-    ShowData();
-  })
-  .then((err) => {
-    console.log(err);
-  });
-setInput("");
-}
-
-
+  const handleDelete1 = (id) => {
+    deleteComments1(id)
+      .then((res) => {
+        ShowData();
+      })
+      .then((err) => {
+        console.log(err);
+      });
+    setInput("");
+  };
 
   return (
     <div>
@@ -90,7 +91,7 @@ setInput("");
               fontSize={16}
               color="#246ab1"
               textAlign={"left"}
-              cursor="pointer"              
+              cursor="pointer"
             >
               {email}{" "}
               <span style={{ color: "grey" }}>{">"} To all employees</span>
@@ -98,12 +99,21 @@ setInput("");
             <Text color={"grey"} fontSize={13} textAlign={"left"}>
               {day} {time}
             </Text>
-          
-          
-           {/* ------------- (Remove button) ------------- */}
-          <Text fontSize={"20px"} fontWeight={500} onClick={()=> handleDelete(id)} p="0" float="right" mt="-80px" mr="3" color={"grey"} _hover={{color:"black",cursor:"pointer"}}>x</Text>
-          
-          
+
+            {/* ------------- (Remove button) ------------- */}
+            <Text
+              fontSize={"20px"}
+              fontWeight={500}
+              onClick={() => handleDelete(id)}
+              p="0"
+              float="right"
+              mt="-80px"
+              mr="3"
+              color={"grey"}
+              _hover={{ color: "black", cursor: "pointer" }}
+            >
+              x
+            </Text>
           </Box>
         </Box>
 

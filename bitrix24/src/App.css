@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-size: 40px;
+  /* color: rgba(206, 201, 201, 0.16); */
 }
 .chakra-ui-light{
   background-image: url('./image/website_background.jpg');

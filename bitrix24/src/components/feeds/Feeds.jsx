@@ -6,6 +6,7 @@ import { Box, SimpleGrid } from "@chakra-ui/react";
 import WelcomeVideo from "./Wecome Video/WelcomeVideo";
 import BottomPart from "./BottomPart";
 import FeedRight from "./FeedRightSide/FeedRight";
+import { RightSidebar } from "../RightSidebar/RightSidebar";
 
 const Feeds = () => {
   const [hours, setHours] = useState(Number);
@@ -55,6 +56,20 @@ const Feeds = () => {
           <Box w="18%" mr="4%">
             <FeedRight />
           </Box>
+        </Box>
+
+        <Box
+          border={"1px solid rgba(198, 186, 186, 0.274)"}
+          bg="rgba(206, 201, 201, 0.16)"
+          mr="-4"
+          pl="1"
+          position={"fixed"}
+          right="0"
+          _hover={{
+            bg: "rgba(198, 186, 186, 0.274)",
+          }}
+        >
+          <RightSidebar />
         </Box>
       </SimpleGrid>
     </div>

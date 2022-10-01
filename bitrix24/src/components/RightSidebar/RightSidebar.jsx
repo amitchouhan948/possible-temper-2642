@@ -13,7 +13,7 @@ export function RightSidebar() {
     <>
       <VStack
         justifyContent="space-between"
-        // border={"1px solid green"}
+        //  border={"1px solid green"}
         bgColor="transparent"
         height="100vh"
         p={"20px 0px 20px 0px"}

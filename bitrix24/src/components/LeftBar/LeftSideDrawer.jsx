@@ -23,7 +23,7 @@ const initItems = [
   { id: 7, title: "Automation", status: true },
   { id: 8, title: "Market", status: true },
   { id: 9, title: "Feed", status: false, path:"feed" },
-  { id: 10, title: "Calender", status: false },
+  { id: 10, title: "Calender", status: false, path:"calender"},
   { id: 11, title: "Online documents", status: true },
   { id: 12, title: "Bitrix24.Drive", status: true },
   { id: 13, title: "Webmail", status: true },

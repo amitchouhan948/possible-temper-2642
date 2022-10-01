@@ -12,6 +12,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { FormModal } from "./FormModal";
 import { background, Box, Button, HStack } from "@chakra-ui/react";
 import { AiFillSetting } from 'react-icons/ai';
+import TopNavbar from "../feeds/TopNavbar";
 
 const locales = {
   "en-IN": require("date-fns/locale/en-US"),
@@ -53,8 +54,32 @@ function HoursPage() {
     setAllTodos(allTodos.filter((todo) => todo.id !== id));
   };
   console.log(allTodos);
+
+
+  const [hours, setHours] = useState(Number);
+  const [minutes, setMinute] = useState(Number);
+  const [Seconds, setSeconds] = useState(Number);
+
+  //------------------=- time -=--------------
+  const time = new Date();
+  const hrs = time.getHours();
+  const min = time.getMinutes();
+  const sec = time.getSeconds();
+
+
+  setTimeout(() => {
+
+    setHours(hrs);
+    setMinute(min);
+    setSeconds(sec);
+  }, 1000);
+
+
+
   return (
+
     <div>
+      <TopNavbar minutes={minutes} hours={hours}/>
       <div className={styles.calenderNav}>
         <h3>My Calender</h3>
         <h3>Company Calender</h3>
