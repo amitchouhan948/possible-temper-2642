@@ -20,3 +20,10 @@
   background: rgba(59, 59, 59, 0.2);
   /* color:rgba(190, 179, 179, 0.559); */
 }
+
+.drower{
+  background-image: url('./sky.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
