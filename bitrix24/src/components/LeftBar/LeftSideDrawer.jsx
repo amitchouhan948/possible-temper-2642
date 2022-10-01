@@ -63,7 +63,7 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
         >
           {/* <DrawerCloseButton /> */}
 
-          <DrawerBody bg="rgba(190, 179, 179, 0.242)" color="#ffffff">
+          <DrawerBody className={styles.drower} color="#ffffff">
             {/* ------------------showing Element------------------ */}
 
             <Box bg="rgba(169, 167, 167, 0.584)" p="3" borderRadius={10} mb="4">
@@ -159,13 +159,13 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
                 Hide <ChevronUpIcon />
               </Button>
             )}
-            <Text fontSize={"12px"} fontWeight={550} color="grey" mb="20px">
+            <Text fontSize={"12px"} fontWeight={550} color="#ffffff" mb="20px">
               SITEMAP
             </Text>
-            <Text fontSize={"12px"} fontWeight={550} color="grey" mb="20px">
+            <Text fontSize={"12px"} fontWeight={550} color="#ffffff" mb="20px">
               CONFIGURE MENU
             </Text>
-            <Text fontSize={"12px"} fontWeight={550} color="grey" mb="20px">
+            <Text fontSize={"12px"} fontWeight={550} color="#ffffff" mb="20px">
               INVITE USERS
             </Text>
             <Button color={"black"}>UPGRADE YOUR PLAN</Button>

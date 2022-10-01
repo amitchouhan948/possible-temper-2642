@@ -14,7 +14,7 @@ export const getMessage2 = () => {
 
 // ------------------- Top message Feeds------------------
 export const getMessage = (filter) => {
-  return axios.get(`http://localhost:8080/message?q=${filter}`);
+  return axios.get(`http://localhost:8080/message/${filter}`);
 };
 
 export const sendMessage = (value, props) => {
