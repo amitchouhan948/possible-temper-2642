@@ -1,3 +1,4 @@
+
 .scroll {
   background: grey;
   margin-top: 200px;
@@ -5,7 +6,7 @@
   height: auto;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 3px;
   height: 20px;
 }
@@ -17,4 +18,5 @@
 
 ::-webkit-scrollbar-track {
   background: rgba(59, 59, 59, 0.2);
-} */
+  /* color:rgba(190, 179, 179, 0.559); */
+}
