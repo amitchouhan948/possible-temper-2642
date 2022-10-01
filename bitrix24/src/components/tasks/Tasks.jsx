@@ -10,29 +10,51 @@ import { MdOutlineFlashOn } from 'react-icons/md';
 import { BiMessageCheck } from 'react-icons/bi';
 import { AiFillLock } from 'react-icons/ai';
 import { BsThreeDots } from 'react-icons/bs';
+import TaskTable from './TaskTable';
+import axios from 'axios';
 
+const getTask=async()=>{
 
+let res= await axios.get("http://localhost:8000/task/")
+
+return res
+}
 
 const Tasks = () => {
 
 const [show,setShow]=useState(true)
+const [tasks,setTasks]=useState([])
+
 
 console.log(show)
 
-  
+
+useEffect(()=>{
+
+ updateTasks();
+
+},[])
+
+  // console.log(tasks)
+const updateTasks=()=>{
+  getTask().then((res)=>{
+    setTasks(res.data)
+  })
+}
+
   return (
     <div className={styles.background}>
-      <Flex height={"100%"} justifyContent="space-between" pt="5%" >
+      <Flex height={"100%"}  pt="5%" gap="20px" >
 
     {/* <LEFT NAV BAR></LEFT> */}
       <Box width="17.2%" border={"1px solid red"} height="100%"></Box>
 
       {/* Task Box Start */}
-      <Box width="76%" border={"1px solid green"} height="100%">
+      <Box width="98%" border={"1px solid green"} height="100%">
 
        {/* Box1 */}
 
-       <Flex width="98%"  height="12%" margin={"auto"} backgroundColor="rgb(245 246 249)" borderRadius=".5em" >
+       <Flex width="98%"  height="60px" margin={"auto"} backgroundColor="rgb(245 246 249)" borderRadius=".5em" >
           <Box margin={"auto"}><Text  color="rgb(16 88 208)" fontSize={"15px"} fontWeight="500" fontFamily={`system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'`} >Tasks</Text></Box>
 
           <Button onClick={()=>setShow(!show)} height="100%" pl="0px" pr="0"><MdOutlineNavigateNext /></Button>  {/* Toggle Button */}
@@ -47,20 +69,21 @@ console.log(show)
 
       {/* Box 2 */}
 
-       <Flex width="98%" m="auto" /*border={"1px solid red"}*/ height="12%" mt="1%" p="1em" >
+       <Flex width="98%" m="auto" /*border={"1px solid red"}*/ height="60px" mt="1%" p="1em" >
           <Text width="auto" fontSize={"26px"} fontWeight="200" fontFamily={`system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'`} >My tasks</Text>
           <Box  ml="6px"><AiFillStar color="a7b0ba"  size="28px" opacity={1} /></Box>
           <Box mt="-8px"><NewTaskModal/></Box>
-          <Box width="53%" mt="-8px" ml="12px"  >
-            <Input bgColor={"white"}  placeholder='Filter and search' />
+          <Box width="52%" mt="-8px" ml="12px"  >
+            <Input bgColor={"rgb(233 237 242 / 40%)"}  placeholder='Filter and search' />
           </Box>
            <Box  mt="-8px" ml="12px" ><Button bgColor="rgb(233 237 242 / 40%)" border={".5px solid white"} _hover={{backgroundColor:"rgb(233 237 242 / 66%)"}}><IoMdSettings color="white" size="22px" /></Button></Box>
            <Box mt="-8px" ml="12px" ><Button bgColor="rgb(233 237 242 / 40%)" border={".5px solid white"} _hover={{backgroundColor:"rgb(233 237 242 / 66%)"}}><MdOutlineFlashOn color="white" size="22px" /></Button></Box>
        </Flex>
 
        {/* Box 3 */}  
+       <Box width="98%" borderTop="1.5px solid rgb(233 237 242 / 40%)" margin="auto"></Box>
 
-       <Flex width="98%" /*border={"1px solid yellow"}*/ height="8%" margin={"auto"}mt="1%">
+       <Flex width="98%" /*border={"1px solid yellow"}*/ height="35px" margin={"auto"}mt="1%">
 
         <Flex bgColor="rgb(233 237 242 / 40%)" p="1em" borderRadius={"20px"} gap="20px" >
           <Text fontSize={"14px"}>List</Text>
@@ -70,7 +93,7 @@ console.log(show)
           <Text fontSize={"14px"}>Gantt</Text>
         </Flex>
 
-          <Flex gap="160px" >
+          <Flex gap="140px" >
         <Flex bgColor="rgb(233 237 242 / 40%)" p="1em" borderRadius={"20px"} gap="25px" ml="12px">
           <Text fontSize={"14px"}>My items:</Text>
           <Text fontSize={"14px"}>Overdue</Text>
@@ -90,12 +113,16 @@ console.log(show)
 
       {/* Box 4 */}
 
-       <Box width="98%" /*border={"1px solid pink"}*/ bgColor="white" borderRadius="20px" height="45%" margin={"auto"}mt="1%">
+       <Box width="98%" /*border={"1px solid pink"}*/ bgColor="white" borderRadius="20px"  margin={"auto"}mt="1%">
+     
+     {/* <Table> */}
+      
+        <TaskTable tasks={tasks} updateTasks={updateTasks} />
 
        </Box>
 
       {/* Footer */}
-      <Flex width="98%" /*border={"1px solid red"}*/ height="12%" margin={"auto"}mt="1%" pb="1em" gap={"10px"} pt=".5em">
+      <Flex width="98%" /*border={"1px solid red"}*/ height="12%" margin={"auto"} mt="3%" pb="1em" gap={"10px"} pt=".5em">
       
       <Text fontSize={"18px"} fontWeight="600" borderRadius="5px" p=".2em 1em .2em 1em" bgColor="rgb(233 237 242 / 40%)" border={".5px solid white"}>Bitrix24</Text>
       <Text borderRadius="5px" p=".4em .8em .3em .8em" bgColor="rgb(233 237 242 / 40%)" border={".5px solid white"}>English</Text>

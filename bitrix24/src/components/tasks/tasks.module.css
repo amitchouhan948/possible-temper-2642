@@ -4,7 +4,8 @@
 
 
 .background{
-    height: 577.5px;
+    /* height: 577.5px; */
+    /* max-height: auto; */
     background-size: contain;
     background-repeat: repeat;
     background-image: url("./images/background.jpg");
