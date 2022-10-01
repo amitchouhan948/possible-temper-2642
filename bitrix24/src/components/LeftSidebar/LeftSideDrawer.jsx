@@ -9,6 +9,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+import { BiHide,BiShow } from 'react-icons/bi';
+
 const initItems = [
   {id:1,title:"Subsciption", status:false},
   {id:3,title:"CRM", status:false},
@@ -49,7 +51,7 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
         <DrawerContent
           //   border="1px solid yellow"
           bgColor={"transparent"}
-          marginTop="50px"
+          marginTop="100px"
           ml={"-50px"}
           p={"0px 0px 0px 50px"}
           overscrollY={"auto"}
@@ -59,19 +61,21 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
           {/* <DrawerCloseButton /> */}
 
           <DrawerBody>
-            {/* <Input placeholder='Type here...' /> */}
 
-            
+            {/* ------------------showing Element------------------ */}
+
              { data.map((el, i) => {
                 return (
                   !el.status && <Box display={"flex"} justifyContent="space-between">
                  <Text key={i} mb="10px">
                     {el.title}
                   </Text>
-                  <Button onClick={()=>handleToggle(el.id)} size={"xs"}>toggle</Button>
+                  <Button onClick={()=>handleToggle(el.id)} size={"xs"}><BiHide/></Button>
                   </Box>
                 );
               })}
+
+              {/* -------------------show or not More Button------------------ */}
             
             {!show ? (
               <Button mb={"40px"} onClick={showAndHide}>
@@ -88,6 +92,9 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
                 Hidden
               </Text>
             )}
+
+
+              {/* ---------------Hidden Element -------------------- */}
              
             {show &&
               data.map((el, i) => {
@@ -96,10 +103,13 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
                  <Text key={i} mb="10px">
                     {el.title}
                   </Text>
-                  <Button onClick={()=>handleToggle(el.id)} size={"xs"}>toggle</Button>
+                  <Button onClick={()=>handleToggle(el.id)} size={"xs"}><BiShow/></Button>
                   </Box>
                 );
               })}
+
+                {/* ------------------show or not hide Button ----------------- */}
+
             {show && (
               <Button mb="20px" onClick={showAndHide}>
                 Hide <ChevronUpIcon/>

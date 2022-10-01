@@ -1,0 +1,110 @@
+
+.formTag {
+  border: 2px solid teal;
+  height: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  background: rgb(203, 199, 199);
+  margin: auto;
+}
+.inputTag {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.datePickerTag {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.submit{
+  background-color: rgb(244, 101, 58);
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+}
+.submit:hover{
+  background-color: rgb(243, 122, 85);
+}
+
+/* .todoTag {
+  display: flex;
+} */
+.showData {
+  border: 1px solid green;
+  margin-top: 10px;
+}
+
+
+.calenderNav{
+  background-color: white;
+  width: 100%;
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  padding: 25px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+}
+.calenderNav>h3:hover{
+cursor: pointer;
+}
+.calenderNav>select{
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.calenderNav>h3:nth-child(1){
+  border-bottom: 2px solid blue;
+  color: blue;
+}
+
+
+
+
+.calenderSecondNav{
+  background-color: transparent;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  font-size: medium;
+  color: white;
+}
+.calenderSecondNav>div:nth-child(1)>h3{
+font-size: 30px;
+}
+.calenderSecondNav>div:nth-child(2){
+  width: 60%;
+}
+.calenderSecondNav>div:nth-child(2)>input{
+  width: 80%;
+}
+.calenderSecondNav>div:nth-child(2)>input{
+  background-color: white;
+  color: black;
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  width: 80%;
+}
+.calenderSecondNav>div:nth-child(3)>button{
+margin-left: 20px;
+}

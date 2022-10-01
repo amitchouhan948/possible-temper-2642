@@ -4,13 +4,6 @@ import { LeftSidebar } from "./components/LeftSidebar/LeftSidebar";
 import { Box, HStack } from "@chakra-ui/react";
 import Login from "./components/pages/login/Login";
 import { RightSidebar } from "./components/RightSidebar/RightSidebar";
-=======
-<<<<<<< HEAD
-import './App.css';
-import Feeds from './components/feeds/Feeds';
-
-=======
-<<<<<<< HEAD
 import "./App.css";
 import { LeftSidebar } from "./components/LeftSidebar/LeftSidebar";
 import { Box } from "@chakra-ui/react";
@@ -27,7 +20,6 @@ import Signup from './components/pages/signup/Signup';
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
       <HStack
         justifyContent={"space-between"}
         p="0px 10px 0px 10px"

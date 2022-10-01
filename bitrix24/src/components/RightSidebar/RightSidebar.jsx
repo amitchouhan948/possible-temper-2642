@@ -1,36 +1,31 @@
-import { Button, VStack } from "@chakra-ui/react";
-import { IoIosNotifications, IoIosHelpCircle } from "react-icons/io";
-import { BsFillChatDotsFill, BsSearch } from "react-icons/bs";
+import {  VStack } from "@chakra-ui/react";
 import { MakeACall } from "./MakeACall";
 import React from "react";
 import { DownLoadMobileApp } from "./DownLoadMobileApp";
+import { UsersDrawer } from "./UsersDrawer";
+import { SearchDrawer } from "./SearchDrawer";
+import { ChatDrawer } from "./ChatDrawer";
+import { NotificationDrawer } from "./NotificationDrawer";
+import { HelpDrawer } from "./HelpDrawer";
 
 export function RightSidebar() {
   return (
     <>
       <VStack
         justifyContent="space-between"
-        border={"1px solid green"}
+        // border={"1px solid green"}
+        bgColor="transparent"
         height="100vh"
         p={"20px 0px 20px 0px"}
+        mr="20px"
       >
         <VStack>
-          <Button borderRadius={"50%"} h="50px">
-            <IoIosHelpCircle size={"1.5em"} />
-          </Button>
+         <HelpDrawer/>
 
-          <Button borderRadius={"50%"} h="50px">
-            <IoIosNotifications size={"1.5em"} />
-          </Button>
-          <Button borderRadius={"50%"} h="50px">
-            <BsFillChatDotsFill size={"1.5em"} />
-          </Button>
-          <Button borderRadius={"50%"} h="50px">
-            <BsSearch size={"1.5em"} />
-          </Button>
-          <Button borderRadius={"50%"} h="50px" bgColor="rgb(223, 83, 45)">
-            AT
-          </Button>
+          <NotificationDrawer/>
+          <ChatDrawer/>
+         <SearchDrawer/>
+          <UsersDrawer/>
         </VStack>
         <VStack>
           <DownLoadMobileApp />
