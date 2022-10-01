@@ -8,6 +8,7 @@ import { AiFillSetting,AiFillMail } from 'react-icons/ai';
 import { BsFillCalendarDayFill,BsFillChatSquareTextFill,BsFillCartDashFill} from 'react-icons/bs';
 import { HiDocumentText,} from 'react-icons/hi';
 import {GrWorkshop} from 'react-icons/gr';
+import {Link} from "react-router-dom"
 
 export function LeftSidebar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -32,16 +33,16 @@ export function LeftSidebar() {
           </Button>
           <Box display={isOpen?"none":"inline-block"}>
             <Button _hover={{color:"black", bg:"white"}} mt="0px" bg="none">
-              <SiCivicrm size={"25px"}/>
+            <Link to="/feed"><BsFillChatSquareTextFill size={"25px"}/></Link>
             </Button>
             <Button _hover={{color:"black", bg:"white"}} mt="-30px" bg="none">
-              <MdTask size={"25px"}/>
+             <Link to="/task"><MdTask size={"25px"}/></Link>
             </Button>
             <Button _hover={{color:"black", bg:"white"}} mt="-60px" bg="none">
-              <AiFillSetting size={"25px"}/>
+            <Link to="/calender"><BsFillCalendarDayFill size={"25px"}/></Link>
             </Button>
             <Button _hover={{color:"black", bg:"white"}} mt="-90" bg="none">
-              <SiMarketo size={"25px"}/>
+            <AiFillSetting size={"25px"}/>
             </Button>
             <Button _hover={{color:"black", bg:"white"}} mt="-120px" bg="none">
               <SiBandrautomation size={"25px"}/>
@@ -50,10 +51,10 @@ export function LeftSidebar() {
               <HiDocumentText size={"25px"}/>
             </Button>
             <Button _hover={{color:"black", bg:"white"}} mt="-180px" bg="none">
-              <BsFillChatSquareTextFill size={"25px"}/>
+            <SiCivicrm size={"25px"}/>
             </Button>
             <Button _hover={{color:"black", bg:"white"}} mt="-210px" bg="none">
-              <BsFillCalendarDayFill size={"25px"}/>
+            <SiMarketo size={"25px"}/>
             </Button>
             <Button _hover={{color:"black", bg:"white"}} mt="-240px" bg="none">
               <MdFeed size={"25px"}/>
