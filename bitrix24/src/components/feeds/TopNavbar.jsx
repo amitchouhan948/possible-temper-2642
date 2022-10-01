@@ -14,7 +14,6 @@ import { SearchIcon } from "@chakra-ui/icons";
 import { BiPlay, BiRocket } from "react-icons/bi";
 import { HiPencil } from "react-icons/hi";
 import { IoMdFlag } from "react-icons/io";
-import { AiOutlineMenu } from "react-icons/ai";
 import { signOut } from "firebase/auth";
 import { auth } from "../../config/Firebase";
 import { useNavigate } from "react-router-dom";
@@ -91,7 +90,7 @@ const TopNavbar = (props) => {
             display="flex"
           >
             <Text>
-              {hours == 12 ? "12" : hours % 12}:
+              {hours === 12 ? "12" : hours % 12}:
               {minutes <= 9 ? "0" + minutes : minutes}
             </Text>
             <span

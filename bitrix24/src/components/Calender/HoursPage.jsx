@@ -10,9 +10,8 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { FormModal } from "./FormModal";
-import { background, Box, Button, HStack } from "@chakra-ui/react";
+import {Button, } from "@chakra-ui/react";
 import { AiFillSetting } from 'react-icons/ai';
-import TopNavbar from "../feeds/TopNavbar";
 
 const locales = {
   "en-IN": require("date-fns/locale/en-US"),
@@ -26,23 +25,10 @@ const localizer = dateFnsLocalizer({
 });
 
 const todos = [
-  {
-    id: Date.now(),
-    title: "Big Meeting",
-    // allDay: true,
-    description: "suscipit eius.",
-    start: new Date(2022, 8, 27),
-    end: new Date(2022, 8, 29),
-  },
+  
 ];
 
 function HoursPage() {
-  const [newTodo, setNewTodo] = useState({
-    title: "",
-    description: "",
-    start: "",
-    end: "",
-  });
   const [allTodos, setAllTodos] = useState(todos);
 
   const handleSubmit = (e, newTodo) => {
@@ -54,32 +40,9 @@ function HoursPage() {
     setAllTodos(allTodos.filter((todo) => todo.id !== id));
   };
   console.log(allTodos);
-
-
-  const [hours, setHours] = useState(Number);
-  const [minutes, setMinute] = useState(Number);
-  const [Seconds, setSeconds] = useState(Number);
-
-  //------------------=- time -=--------------
-  const time = new Date();
-  const hrs = time.getHours();
-  const min = time.getMinutes();
-  const sec = time.getSeconds();
-
-
-  setTimeout(() => {
-
-    setHours(hrs);
-    setMinute(min);
-    setSeconds(sec);
-  }, 1000);
-
-
-
   return (
 
-    <div>
-      <TopNavbar minutes={minutes} hours={hours}/>
+    <div className={styles.container}>
       <div className={styles.calenderNav}>
         <h3>My Calender</h3>
         <h3>Company Calender</h3>
@@ -100,8 +63,8 @@ function HoursPage() {
           <input type="text" placeholder="Filter and Search" />
         </div>
         <div>
-          <Button>CALENDERS</Button>
-          <Button><AiFillSetting/></Button>
+          <Button colorScheme={"cyan"}>CALENDERS</Button>
+          <Button colorScheme={"cyan"}><AiFillSetting/></Button>
         </div>
       </div>
       <div className={styles.todoTag}>
@@ -123,16 +86,19 @@ function HoursPage() {
           }}
         />
         <div>
+          <h2 className={styles.tasks}>TASKS</h2>
+          <div style={{ display: "grid",gridTemplateRows:"auto",gridTemplateColumns:"repeat(4,1fr)",padding:"20px",margin:"auto",gap:'50px',width:"100%"}}>
           {allTodos.map((el) => {
             return (
-              <div style={{ display: "flex" }}>
+              <div style={{display:"flex"}}>
                 <div className={styles.showData} key={el.id}>
                   {el.description}
-                </div>
                 <button onClick={() => handleDelete(el.id)}>Delete</button>
+                </div>
               </div>
             );
           })}
+          </div>
         </div>
       </div>
     </div>

@@ -1,4 +1,7 @@
-
+.container{
+  /* border: 1px solid green; */
+  width: 100%;
+}
 .formTag {
   border: 2px solid teal;
   height: 100%;
@@ -38,9 +41,32 @@
 /* .todoTag {
   display: flex;
 } */
+.tasks{
+  margin-top: 30px;
+  color: black
+}
 .showData {
-  border: 1px solid green;
-  margin-top: 10px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 30px;
+  border-radius: 20px;
+  background-color: rgb(245, 217, 180);
+}
+.showData>button{
+  border: 1px solid black;
+  width: 70%;
+  margin: auto;
+  padding: 10px 15px 10px 15px;
+  background-color: rgb(208, 61, 61);
+  color: white;
+  font-size: 15px;
+  border-radius: 50px;
+}
+.showData>button:hover{
+  background-color: rgb(201, 77, 77);
+  cursor: pointer;
 }
 
 
@@ -90,6 +116,7 @@ cursor: pointer;
 }
 .calenderSecondNav>div:nth-child(1)>h3{
 font-size: 30px;
+color: white;
 }
 .calenderSecondNav>div:nth-child(2){
   width: 60%;
@@ -101,7 +128,7 @@ font-size: 30px;
   background-color: white;
   color: black;
   margin-left: 20px;
-  padding: 5px;
+  padding: 8px;
   border-radius: 10px;
   width: 80%;
 }

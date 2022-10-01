@@ -6,7 +6,7 @@ import HomePage from "../components/HomePages/homepage/HomePage"
 import Login from '../components/pages/login/Login'
 // import Signup from '../components/pages/Signupdata/Signup'
 import Signup from  "../components/pages/Signupdata/Signup"
-import HoursPage from '../components/Calender/HoursPage'
+import { ManiPageCalender } from '../components/Calender/MainPageCalender'
 const AllRouts = () => {
   return (
     <div>
@@ -16,7 +16,7 @@ const AllRouts = () => {
             <Route path="/Login" element={<Login/>}/>
             <Route path="/User" element={<Afterlogin/>}/>
             <Route path="/feed" element={<Feeds/>}/>
-            <Route path="/calender" element={<HoursPage/>}/>
+            <Route path="/calender" element={<ManiPageCalender/>}/>
             <Route path="/task" element={<h1>PATH</h1>}/>
         </Routes>
     </div>

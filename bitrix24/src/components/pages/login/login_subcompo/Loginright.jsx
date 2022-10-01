@@ -1,4 +1,4 @@
-import { Box, Button,Form, Checkbox, FormControl, FormLabel, Input, Text, Alert, AlertIcon } from '@chakra-ui/react'
+import { Box, Button, Checkbox, FormLabel, Input, Text, Alert, AlertIcon } from '@chakra-ui/react'
 import React from 'react'
 import styles from "./subcompo.module.css"
 import {  Link ,useNavigate} from 'react-router-dom'
