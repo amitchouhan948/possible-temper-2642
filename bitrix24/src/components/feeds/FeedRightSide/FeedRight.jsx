@@ -6,14 +6,14 @@ import RightLogo from "./RightLogo.png";
 import AppstorImg from "./appstor.png";
 import GooglePlayImg from "./googleplay.png";
 import { useEffect } from "react";
-import { getMessage } from "../Api/Api";
+import { getMessage2 } from "../Api/Api";
 import { useState } from "react";
 
 const FeedRight = () => {
   const [message, setMessage] = useState([]);
 
   useEffect(() => {
-    getMessage()
+    getMessage2()
       .then((res) => {
         setMessage(res.data);
       })
@@ -226,6 +226,7 @@ const FeedRight = () => {
           >
             {message.map((item) => (
               <Box
+                key={item.id}
                 borderBottomRadius={10}
                 display={"flex"}
                 justifyContent="space-between"

@@ -37,6 +37,7 @@ const CommentPart = (props) => {
                 fontSize={16}
                 color="#246ab1"
                 textAlign={"left"}
+                cursor="pointer"
               >
                 {email}{" "}
                 <span style={{ color: "grey", fontSize: "10px" }}>

@@ -1,7 +1,20 @@
 import axios from "axios";
 
-export const getMessage = () => {
+
+
+
+//---------------- Right Side Data ----------------
+export const getMessage2 = () => {
   return axios.get(`http://localhost:8080/message`);
+};
+
+
+
+
+
+// ------------------- Top message Feeds------------------
+export const getMessage = (filter) => {
+  return axios.get(`http://localhost:8080/message?q=${filter}`);
 };
 
 export const sendMessage = (value, props) => {
@@ -32,7 +45,12 @@ export const sendMessage = (value, props) => {
   });
 };
 
-// -------------------------
+
+
+
+
+
+// ----------- Feeds Comments --------------
 
 export const getComments1 = () => {
   return axios.get(`http://localhost:8080/comments1`);
@@ -69,8 +87,8 @@ export const sendComments1 = (value, props) => {
 
 
 
-// ---------------------------------
-// -------------------------
+
+// ----------- Youtube Comment --------------
 
 export const getComments2 = () => {
   return axios.get(`http://localhost:8080/comments2`);

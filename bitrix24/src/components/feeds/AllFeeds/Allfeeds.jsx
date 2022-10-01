@@ -13,7 +13,7 @@ import React from "react";
 import FeedsDiv from "./FeedsDiv";
 
 const Allfeeds = (props) => {
-  const { hours, minutes, month, date, message } = props;
+  const { hours, minutes, month, date, message, setFilter } = props;
 
   return (
     <div>
@@ -33,6 +33,7 @@ const Allfeeds = (props) => {
           <Box display={"flex"} justifyContent="space-between">
             <InputGroup w="85%">
               <Input
+                onInput={(e) => setFilter(e.target.value)}
                 borderRadius={"30px"}
                 bg={"#ffffff"}
                 placeholder="Search and filter.."

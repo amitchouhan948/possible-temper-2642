@@ -77,6 +77,7 @@ const FeedsDiv = (props) => {
               fontSize={16}
               color="#246ab1"
               textAlign={"left"}
+              cursor="pointer"
             >
               {email}{" "}
               <span style={{ color: "grey" }}>{">"} To all employees</span>
@@ -103,6 +104,7 @@ const FeedsDiv = (props) => {
           display={"flex"}
           alignItems="center"
           gap="5"
+          cursor={"pointer"}
         >
           <Box mt={like ? "6" : "-.5"}>
             <Text

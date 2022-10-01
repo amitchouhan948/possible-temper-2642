@@ -85,6 +85,7 @@ const WelcomeVideo = (props) => {
                 color="#246ab1"
                 fontWeight={500}
                 textAlign={"left"}
+                cursor="pointer"
               >
                 abhisheksolanki1020@gmail.com{" "}
                 <span style={{ color: "grey" }}>{">"} To all employees</span>
@@ -151,6 +152,7 @@ const WelcomeVideo = (props) => {
             display={"flex"}
             alignItems="center"
             gap="5"
+            cursor="pointer"
           >
             <Box mt={like ? "6" : "-.5"}>
               <Text

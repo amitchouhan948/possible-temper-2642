@@ -18,13 +18,15 @@ const Message = (props) => {
   const [input, setInput] = useState(false);
   const [value, setValue] = useState("");
   const [message, setMessage] = useState([]);
+  const [filter, setFilter] = useState("")
+
 
   useEffect(() => {
     ShowData();
-  }, []);
+  }, [filter]);
 
   const ShowData = () => {
-    getMessage()
+    getMessage(filter)
       .then((res) => {
         setMessage(res.data);
       })
@@ -188,6 +190,7 @@ const Message = (props) => {
         hours={hours}
         month={month}
         date={date}
+        setFilter={setFilter}
       />
     </div>
   );
