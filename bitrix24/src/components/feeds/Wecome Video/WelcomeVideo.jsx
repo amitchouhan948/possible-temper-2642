@@ -21,6 +21,7 @@ import { auth } from "../../../config/Firebase";
 
 
 
+
 const WelcomeVideo = (props) => {
   const [input, setInput] = useState(false);
   const [follow, setFollow] = useState(false);
@@ -105,7 +106,7 @@ const WelcomeVideo = (props) => {
                 textAlign={"left"}
                 cursor="pointer"
               >
-                abhisheksolanki1020@gmail.com{" "}
+                {user.email}{" "}
                 <span style={{ color: "grey" }}>{">"} To all employees</span>
               </Text>
               <Text fontSize={14} textAlign={"left"} color="grey">

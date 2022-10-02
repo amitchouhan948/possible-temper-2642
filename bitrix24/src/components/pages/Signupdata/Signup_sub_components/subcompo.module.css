@@ -5,7 +5,8 @@
   .right_box {
     width: 100%;
     /* border: 1px solid rgb(252, 84, 84); */
-    height: auto;
+    height: 100%;
+    background: white;
     /* border: 1px solid red; */
   }
 
@@ -21,7 +22,7 @@
     font-size: 31px;
     padding: 20px;
     margin-bottom: -10px;
-
+    color: black;
   }
   .right_box > :nth-child(3) {
     font-size: 16px;
@@ -68,27 +69,30 @@
   }
 
 .form_controls>:nth-child(1){
-font-size: 20px;
+font-size: 25px;
 line-height: 26px;
- width: 70%;
+ width: 63%;
  font-weight: lighter;
  margin: auto;
  /* font-family:sans-serif; */
 color: grey;
  margin-top: 10px;
  margin-bottom: 10px;
+ font-weight: 400;
+
  /* font-weight: 200; */
 
 }
 .form_controls>:nth-child(3){
-  font-size: 20px;
+  font-size: 25px;
   line-height: 26px;
- width: 70%;
+ width: 63%;
  margin: auto;
  color: grey;
  margin-top: 10px;
  margin-bottom: 10px;
  font-weight: 200;
+ font-weight: 400;
 }
 
   .check_box {
@@ -121,6 +125,7 @@ color: grey;
   .haveaccounttext{
     margin-top: 20px;
     color: grey;
+    font-size: 22px;
   }
   .haveaccounttext>*{
     margin-top: 20px;
@@ -139,12 +144,15 @@ color: grey;
   }
   .check_text{
     font-size: 14px;
+    color: gray;
   }
 
   .needhelp{
     color: #27a3f8;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-size: 22px;
+    background: white;
   }
 
 
@@ -195,6 +203,7 @@ justify-content: space-between;
       cursor: pointer;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       padding: 8px;
+      font-size: 18px;
     }
     .googlebox>:nth-child(1){
       width: 25%;

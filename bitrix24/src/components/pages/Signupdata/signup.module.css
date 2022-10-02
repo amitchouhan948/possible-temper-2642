@@ -17,7 +17,8 @@
 .mainsignup>:nth-child(2){
   width: 58%;
   position: absolute;
-  left: 42%
+  left: 42%;
+  background-color: white;
 }
 
 

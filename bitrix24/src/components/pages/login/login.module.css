@@ -3,6 +3,7 @@
 .mainlogin{
   display: flex;
   justify-content: space-between;
+  background: white;
 }
 
 
@@ -18,7 +19,8 @@
 .mainlogin>:nth-child(2){
   width: 58%;
   position: absolute;
-  left: 42%
+  left: 42%;
+  background-color: white;
 }
 
 

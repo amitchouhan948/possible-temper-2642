@@ -20,6 +20,7 @@
     font-size: 31px;
     padding: 20px;
     margin-bottom: -10px;
+    color: black;
 
   }
   .right_box1 > :nth-child(3) {
@@ -47,7 +48,6 @@
   .input_filed11{
     text-align: start;
     padding: 22px;
-    width: 65%;
     border-radius: 0px;
     font-size: 18px;
     outline: none;
@@ -58,24 +58,25 @@
 .form_controls1>:nth-child(1){
   font-size: 20px;
   line-height: 26px;
-   width: 65%;
-   font-weight: lighter;
+   width: 60%;
+   font-weight: 400;
    margin: auto;
    /* font-family:sans-serif; */
   color: grey;
    margin-top: 10px;
-   margin-bottom: 10px;
+
+   /* margin-bottom: 10px; */
 }
 .form_controls1>:nth-child(3){
   font-size: 20px;
   line-height: 26px;
-   width: 65%;
-   font-weight: lighter;
+   width: 60%;
+   font-weight: 400;
    margin: auto;
    /* font-family:sans-serif; */
   color: grey;
    margin-top: 10px;
-   margin-bottom: 10px;
+   /* margin-bottom: 10px; */
 }
 
   .check_box1{
@@ -85,6 +86,7 @@
     color: grey;
     line-height: 25px;
     margin: auto;
+
   }
   
   .btn_box1 {
@@ -105,6 +107,7 @@
   }
   .haveaccounttext1{
     margin-top: 20px;
+    font-size: 22px;
 color: grey;
   }
   .haveaccounttext1>*{
@@ -123,6 +126,7 @@ color: grey;
   }
   .check_text1{
     font-size: 14px;
+    color: gray;
   }
 
 

@@ -59,11 +59,13 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
           p={"0px 0px 0px 50px"}
           overscrollY={"auto"}
           shadow="none"
+          h={"100vh"}
+          
           className={styles.scroll}
         >
           {/* <DrawerCloseButton /> */}
 
-          <DrawerBody className={styles.drower}>
+          <DrawerBody className={styles.drower} borderRightRadius="10px">
             {/* ------------------showing Element------------------ */}
             <Box
               bg="rgba(206, 201, 201, 0.306)"
@@ -95,7 +97,7 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
             {/* -------------------show or not More Button------------------ */}
 
             {!show ? (
-              <Button color={"black"} mb={"40px"} onClick={showAndHide}>
+              <Button bg={"transparent"} variant="outline" color={"white"} mb={"40px"} onClick={showAndHide} _hover={{color:"black",bg:"white"}}>
                 More... <ChevronDownIcon />
               </Button>
             ) : (
@@ -144,7 +146,7 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
             {/* ------------------show or not hide Button ----------------- */}
 
             {show && (
-              <Button mb="20px" onClick={showAndHide}>
+              <Button mb="20px" onClick={showAndHide} variant="outline" color={"white"} bg="transparent" _hover={{color:"black",bg:"white"}}>
                 Hide <ChevronUpIcon />
               </Button>
             )}
@@ -157,7 +159,7 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
             <Text fontSize={"13px"} fontWeight={500} ml="3" mb="20px">
               INVITE USERS
             </Text>
-            <Button>UPGRADE YOUR PLAN</Button>
+            <Button  variant="outline" color={"white"} bg="transparent" _hover={{color:"black",bg:"white"}}>UPGRADE YOUR PLAN</Button>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

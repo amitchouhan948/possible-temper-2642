@@ -89,7 +89,7 @@ const TopNavbar = (props) => {
             fontWeight={300}
             display="flex"
           >
-            <Text>
+            <Text fontSize={"40px"}>
               {hours === 12 ? "12" : hours % 12}:
               {minutes <= 9 ? "0" + minutes : minutes}
             </Text>

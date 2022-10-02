@@ -54,11 +54,11 @@ console.log(error)
 
     <form onSubmit={handeldsubmite} className={styles.form_controls1} >
 
-  <FormLabel>Email address</FormLabel>
-  <Input  htmlSize={55} width='auto' onChange={(e)=>setemail(e.target.value)} className={styles.input_filed11} type='email' />
+  <FormLabel >Email address</FormLabel>
+  <Input  htmlSize={55} onChange={(e)=>setemail(e.target.value)} width="530px" className={styles.input_filed11} type='email' />
 
-  <FormLabel>Pasword </FormLabel>
-  <Input  htmlSize={55} width='auto' onChange={(e)=>setPassword(e.target.value)} className={styles.input_filed11} type='password' />
+  <FormLabel >Pasword </FormLabel>
+  <Input  htmlSize={55} width="530px" onChange={(e)=>setPassword(e.target.value)} className={styles.input_filed11} type='password' />
 
 
 

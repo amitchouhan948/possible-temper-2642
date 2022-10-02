@@ -63,8 +63,8 @@ function HoursPage() {
           <input type="text" placeholder="Filter and Search" />
         </div>
         <div>
-          <Button colorScheme={"cyan"}>CALENDERS</Button>
-          <Button colorScheme={"cyan"}><AiFillSetting/></Button>
+          <Button colorScheme={"green"}>CALENDERS</Button>
+          <Button colorScheme={"green"}><AiFillSetting/></Button>
         </div>
       </div>
       <div className={styles.todoTag}>

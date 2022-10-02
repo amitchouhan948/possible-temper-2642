@@ -80,17 +80,18 @@ const Message = (props) => {
           ml="5"
           mt={3}
           pb={4}
+          fontWeight="500"
           className={style.msgRow}
         >
           <Text color={"blue"} textDecoration="underline">
             MESSAGE
           </Text>
           <Link to="/task">
-            <Text>TASK</Text>
+            <Text  color="grey">TASK</Text>
           </Link>
-          <Text>EVENT</Text>
-          <Text>POLL</Text>
-          <Text>MORE</Text>
+          <Text color="grey">EVENT</Text>
+          <Text color="grey">POLL</Text>
+          <Text color="grey">MORE</Text>
         </Box>
 
         {/* ------------------- (Input) --------------------- */}

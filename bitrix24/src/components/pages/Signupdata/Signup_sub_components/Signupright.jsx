@@ -74,10 +74,10 @@ seterror("")
   }
 
   return (
-    <Box className={styles.right_box}>
-      <Text>Bitrix24 Registration</Text>
+    <Box className={styles.right_box} >
+      <Text color={"black"}>Bitrix24 Registration</Text>
       <hr className={styles.hrline} />
-      <Text>Use your social account to register</Text>
+      <Text color={"black"}>Use your social account to register</Text>
 
      <SignupRightButtons/>
 
@@ -97,7 +97,6 @@ seterror("")
            type="email"
            name="email"
            onChange={getdata}
-           
           //  placeholder="Enter email"
            className={styles.input_filed1}
         />
@@ -113,7 +112,7 @@ seterror("")
            className={styles.input_filed1}
         />
 
-<Text className={styles.text}>
+<Text className={styles.text} color="gray">
       By registering you confirm that you accept the <span>Terms of Services</span> and
       <span> Privacy Policy</span> 
     </Text>

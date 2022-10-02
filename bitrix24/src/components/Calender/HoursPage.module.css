@@ -3,11 +3,11 @@
   width: 100%;
 }
 .formTag {
-  border: 2px solid teal;
+  /* border: 2px solid teal; */
   height: 100%;
   border-radius: 10px;
   padding: 20px;
-  background: rgb(203, 199, 199);
+  background: rgb(240, 240, 247);
   margin: auto;
 }
 .inputTag {
@@ -16,26 +16,31 @@
   text-align: center;
   margin-bottom: 20px;
   margin-right: 10px;
-  padding: 5px;
+  padding: 10px;
+  font-weight: bold;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 2px solid gray;
 }
 .datePickerTag {
   margin-bottom: 20px;
   text-align: center;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
+  font-weight: bold;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 2px solid gray;
+
 }
 .submit{
-  background-color: rgb(244, 101, 58);
+  background-color: #3182ce;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
+  font-weight: bold;
   border-radius: 10px;
 }
 .submit:hover{
-  background-color: rgb(243, 122, 85);
+  background-color: #5289bd;
+  cursor: pointer;
 }
 
 /* .todoTag {

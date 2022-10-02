@@ -1,17 +1,22 @@
 .userlogin{
     display: flex;
     justify-content: space-between;
+    background: white;
+
   }
   
-  
+  .userlogin>:nth-child(2){
+    background: white;
+    height: 100vh;
+  }
   /* ............userlogin main right......... */
 
 .wrapbox{
-
+  background-color: white;
 }
 .title{
     font-size: 30px;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .horizontalline{
@@ -44,8 +49,9 @@
     width: 70%;
 text-align: start;
 margin: auto;
-margin-top: 70px;
+margin-top: 100px;
 color: gray;
+font-size: 16px;
  
 }
 
@@ -81,8 +87,10 @@ color: gray;
     align-items: center;
     border: 1px solid #2fc6f6;
     background: rgb(255, 255, 255);
-    padding: 10px;
+    padding: 15px;
     margin: auto;
+    font-size: 18px;
+    border-radius: 10px;
   }
 
   .info_box>:nth-child(1){
@@ -91,7 +99,7 @@ color: gray;
     border-radius: 60px;
   }
   .info_box>:nth-child(2){
-width: 60%;
+width: 80%;
   }
 
 
@@ -102,18 +110,19 @@ width: 60%;
     display: flex;
     align-items: center;
     /* border: 1px solid  #2fc6f6; */
-    width: 70%;
+    width: 72%;
     margin: auto;
     justify-content: space-between;
-    font-size: 20px;
-    padding: 20px;
+    font-size: 14px;
+    padding: 10px;
     cursor: pointer;
+    /* margin-top: 20px; */
   }
   
   .idbox>:nth-child(1){
 color: #2fc6f6;
 font-size:25px;
-
+font-size: 28px;
 
   }
   .idbox>:nth-child(2){
@@ -124,3 +133,13 @@ border-radius: 20px;
 cursor: pointer;
 
   }
+
+
+
+
+
+  /* .....Responsiv....// */
+
+
+
+  
