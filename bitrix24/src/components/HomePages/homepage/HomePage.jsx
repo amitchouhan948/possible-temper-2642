@@ -219,23 +219,23 @@ function HomePage()
               <h2>
                 Bitrix24 On-Premise Edition
               </h2>
-              <div>
-                <div>
+              <div style={{textAlign:"left",marginLeft:"20px"}}>
+                <div style={{display:"flex",gap:"20px"}}>
                   <img src={RightBlue} alt="RightGreen"/><span> Increased service performance and speed</span>
                 </div>
-                <div>
+                <div  style={{display:"flex",gap:"20px"}}>
                   <img src={RightBlue} alt="RightGreen"/> <span> Hosted on your own server</span>
                 </div>
-                <div>
+                <div   style={{display:"flex",gap:"20px"}}>
                   <img src={RightBlue} alt="RightGreen"/> <span> Enhanced security settings</span>
                 </div>
-                <div>
+                <div  style={{display:"flex",gap:"20px"}}>
                   <img src={RightBlue} alt="RightGreen"/> <span> Fully customizable: fonts, colors, menus, texts, source code, etc.</span>
                 </div>
-                <div>
+                <div  style={{display:"flex",gap:"20px"}}>
                   <img src={RightBlue} alt="RightGreen"/> <span> Easily scalable</span>
                 </div>
-                <div>
+                <div  style={{display:"flex",gap:"20px"}}>
                   <img src={RightBlue} alt="RightGreen"/> <span> 100+ third-party integrations</span>
                 </div>
               </div>
