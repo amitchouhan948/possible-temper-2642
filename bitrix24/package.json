@@ -1,4 +1,5 @@
 {
+  "homepage": "https://amitchouhan948.github.io/possible-temper-2642",
   "name": "bitrix24",
   "version": "0.1.0",
   "private": true,
@@ -26,9 +27,10 @@
     "react-big-calendar": "^1.5.0",
     "react-datepicker": "^4.8.0",
     "date-fns": "^2.29.3"
-
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
