@@ -7,7 +7,7 @@ import styles from "../userlogin.module.css"
 const Userinforight = () => {
 
     const [user]=useAuthState(auth)
-console.log(user.displayName)
+console.log(user?.displayName || "A")
   return (
     <div>
  <Box className={styles.info_box}  >

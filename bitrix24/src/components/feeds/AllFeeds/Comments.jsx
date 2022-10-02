@@ -1,11 +1,11 @@
 import { Box, Text, Image } from '@chakra-ui/react';
 import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from "../../../config/Firebase";
+import personImg from "../../personImg.jpg"
+
 
 const Comments = (props) => {
   const { day, time, email, message, id, handleDelete1 } = props;
-  const [user] = useAuthState(auth);
 
   return (
     <div>
@@ -13,15 +13,13 @@ const Comments = (props) => {
       <Box display={"flex"} gap="3" alignItems={"center"}>
             <Box
               fontSize={"23px"}
-              bg={"#7b8691"}
-              color={"#ffffff"}
               borderRadius="50px"
               w="37px"
               ml="0"
               mt="4"
               h="36px"
             >
-             <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
+             <Image w="45px" borderRadius={"50px"} src={personImg} />
 
             </Box>
 

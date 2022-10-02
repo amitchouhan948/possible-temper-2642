@@ -1,5 +1,4 @@
 {
-  "homepage": "https://atrivedi8988.github.io/Bitrix24",
   "name": "bitrix24",
   "version": "0.1.0",
   "private": true,
@@ -13,9 +12,13 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.23.3",
     "axios": "^0.27.2",
+    "date-fns": "^2.29.3",
     "firebase": "^9.10.0",
     "framer-motion": "^6.5.1",
+    "netlify": "^12.0.1",
     "react": "^18.2.0",
+    "react-big-calendar": "^1.5.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.0.3",
     "react-google-button": "^0.7.2",
@@ -23,10 +26,7 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",
-    "web-vitals": "^2.1.4",
-    "react-big-calendar": "^1.5.0",
-    "react-datepicker": "^4.8.0",
-    "date-fns": "^2.29.3"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",

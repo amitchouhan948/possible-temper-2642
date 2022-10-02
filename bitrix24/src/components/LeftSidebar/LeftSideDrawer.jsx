@@ -80,7 +80,7 @@ export function LeftSideDrawer({ isOpen, onOpen, onClose, btnRef }) {
               {data.map((el, i) => {
                 return (
                   !el.status && (
-                    <Box display={"flex"} justifyContent="space-between">
+                    <Box key={el.id} display={"flex"} justifyContent="space-between">
                       <Link to={el.path}>
                         <Text key={i} mb="10px">
                           {el.title}

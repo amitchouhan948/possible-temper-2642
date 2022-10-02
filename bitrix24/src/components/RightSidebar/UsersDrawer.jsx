@@ -19,7 +19,7 @@ import { BiMessageDetail, BiMessageRoundedDetail } from "react-icons/bi";
 import { IoIosNotifications, IoIosCall, IoIosSettings } from "react-icons/io";
 import { RiFeedbackFill } from "react-icons/ri";
 import {auth} from "../../config/Firebase";
-
+import personImg from "../personImg.jpg"
 
 export function UsersDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -38,7 +38,7 @@ export function UsersDrawer() {
         bgColor="rgb(223, 83, 45)"
         p="0"
       >
-        <Image w="45px" border={"1px solid grey"} borderRadius={"50px"} src={user?.photoURL || "dd"}/>
+        <Image w="45px" border={"1px solid grey"} borderRadius={"50px"} src={user?.photoURL || personImg}/>
       </Button>
       <Drawer
         isOpen={isOpen}

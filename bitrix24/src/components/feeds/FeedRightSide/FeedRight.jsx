@@ -10,6 +10,7 @@ import { getMessage2 } from "../Api/Api";
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../config/Firebase";
+import personImg from "../../personImg.jpg";
 
 const FeedRight = () => {
   const [message, setMessage] = useState([]);
@@ -41,7 +42,11 @@ const FeedRight = () => {
             mt="5"
             h="10"
           >
-            <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
+            <Image
+              w="45px"
+              borderRadius={"50px"}
+              src={user?.photoURL || personImg}
+            />
           </Box>
         </Box>
 
@@ -251,19 +256,13 @@ const FeedRight = () => {
                 >
                   <Box
                     fontSize={"22px"}
-                    bg={"#7b8691"}
-                    color={"#ffffff"}
                     borderRadius="50px"
                     w="38px"
                     ml="0"
                     mt="2"
                     h="38px"
                   >
-                    <Image
-                      w="40px"
-                      borderRadius={"50px"}
-                      src={user.photoURL || ""}
-                    />
+                    <Image  mt="1" w="40px" borderRadius={"50px"} src={personImg} />
                   </Box>
                   <Box mt="2" textAlign={"left"}>
                     <Text color="black">{item.email}</Text>

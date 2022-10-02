@@ -275,7 +275,7 @@ function NewTaskModal({ updateTasks }) {
                       bgColor={"white"}
                       type="text"
                       color="#535c69"
-                      value={user.displayName||"Any Person"}
+                      value={user?.displayName || "Any Person"}
                     ></Input>
                   </Flex>
 

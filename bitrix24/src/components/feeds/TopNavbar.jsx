@@ -19,6 +19,8 @@ import { auth } from "../../config/Firebase";
 import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useState } from "react";
+import personImg from "../personImg.jpg"
+
 
 const TopNavbar = (props) => {
   const { hours, minutes } = props;
@@ -134,7 +136,7 @@ const TopNavbar = (props) => {
               p="0"
               mt="1"
             >
-              <Image w="30px" borderRadius={"50px"} src={user?.photoURL || "dd"} alt="o" />
+              <Image w="30px" borderRadius={"50px"} src={user?.photoURL || personImg} alt="o" />
             </Box>
 
             <Text color={"#ffffff"} fontSize={"16px"} display="flex" gap={"3"}>

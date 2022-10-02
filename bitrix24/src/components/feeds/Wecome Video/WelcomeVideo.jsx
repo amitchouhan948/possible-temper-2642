@@ -15,6 +15,8 @@ import { deleteComments2, getComments2, sendComments2 } from "../Api/Api";
 import CommentPart from "./CommentPart";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../config/Firebase";
+import personImg from "../../personImg.jpg"
+
 
 const WelcomeVideo = (props) => {
   const [input, setInput] = useState(false);
@@ -87,7 +89,7 @@ const WelcomeVideo = (props) => {
               ml="5"
               mt="0"
             >
-              <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
+              <Image w="45px" borderRadius={"50px"} src={user?.photoURL || personImg} />
             </Box>
             {/* --------- */}
             <Box mt="6">
@@ -98,7 +100,7 @@ const WelcomeVideo = (props) => {
                 textAlign={"left"}
                 cursor="pointer"
               >
-                {user.email}{" "}
+                {user?.email}{" "}
                 <span style={{ color: "grey" }}>{">"} To all employees</span>
               </Text>
               <Text fontSize={14} textAlign={"left"} color="grey">
@@ -218,7 +220,7 @@ const WelcomeVideo = (props) => {
               h="10"
               display={input ? "none" : "block"}
             >
-              <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
+              <Image w="45px" borderRadius={"50px"} src={user?.photoURL || personImg} />
             </Box>
 
             {/* -------------------- (Comment Part) --------- */}

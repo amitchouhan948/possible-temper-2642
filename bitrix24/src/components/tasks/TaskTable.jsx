@@ -23,6 +23,8 @@ import { IoPersonCircleSharp } from "react-icons/io5";
 import { BsPlusSquareDotted } from "react-icons/bs";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Image } from "antd";
+import personImg from "../personImg.jpg"
+
 
 const deleteTask = async (id, action) => {
   if (action === "delete") {
@@ -187,8 +189,8 @@ const TaskTable = ({ tasks, updateTasks }) => {
         {/* </Thead> */}
         <Tbody>
           {tasks &&
-            tasks.map((el) => (
-              <Tr backgroundColor={id === el._id ? "#f1f9de" : "white"}>
+            tasks.map((el, i) => (
+              <Tr key={i} backgroundColor={id === el._id ? "#f1f9de" : "white"}>
                 <Td width="20px">
                   {" "}
                   <Checkbox
@@ -232,9 +234,9 @@ const TaskTable = ({ tasks, updateTasks }) => {
                     p=".4em"
                     _hover={{ bgColor: "#C0EDFD", borderRadius: "20px" }}
                   >
-                   <Image src={user.photoURL||""} style={{borderRadius:"50px"}} color="grey" width={"25px"}  />
+                   <Image src={user?.photoURL || personImg} style={{borderRadius:"50px"}} color="grey" width={"25px"}  />
                     <Text color="grey" ml="5px" mt="-4px">
-                      {user.displayName}
+                      {user?.displayName || "A"}
                     </Text>
                   </Flex>
                 </Td>
@@ -244,9 +246,9 @@ const TaskTable = ({ tasks, updateTasks }) => {
                     _hover={{ bgColor: "#C0EDFD", borderRadius: "20px" }}
                   >
                     
-                    <Image src={user.photoURL||""} style={{borderRadius:"50px"}} color="grey" width={"25px"}  />
+                    <Image src={user?.photoURL || personImg} style={{borderRadius:"50px"}} color="grey" width={"25px"}  />
                     <Text color="grey" ml="5px" mt="-4px">
-                     {user.displayName}
+                     {user?.displayName || "A"}
                     </Text>
                   </Flex>
                 </Td>

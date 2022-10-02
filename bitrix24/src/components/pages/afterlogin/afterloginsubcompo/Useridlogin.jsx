@@ -13,7 +13,7 @@ navigate("/feed")
   return (
     <div>
         <Box onClick={openfeed} className={styles.idbox}>
-            <p>{user?.uid}</p>
+            <p>{user?.uid || "?"}</p>
             <Button onClick={openfeed}>Open</Button>
         </Box>
 

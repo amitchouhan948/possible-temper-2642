@@ -17,6 +17,8 @@ import Comments from "./Comments";
 import { deleteComments1, getComments1, sendComments1 } from "../Api/Api";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../config/Firebase";
+import personImg from "../../personImg.jpg"
+
 
 const FeedsDiv = (props) => {
   const { day, time, email, id, message, handleDelete } = props;
@@ -73,14 +75,16 @@ const FeedsDiv = (props) => {
         <Box display={"flex"} alignItems="center" gap={"5"}>
           <Box
             fontSize={"28px"}
-            bg={"#7b8691"}
-            color={"#ffffff"}
             borderRadius="50px"
             w="45px"
             ml="5"
             mt="5"
           >
-            <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
+            <Image
+              w="45px"
+              borderRadius={"50px"}
+              src={personImg}
+            />
           </Box>
           {/* --------- */}
           <Box w="100%" mt="6">
@@ -183,8 +187,6 @@ const FeedsDiv = (props) => {
         <Grid ml="14" display={"flex"} alignItems="center">
           <Box
             fontSize={"23px"}
-            bg={"#7b8691"}
-            color={"#ffffff"}
             borderRadius="50px"
             w="40px"
             ml="5"
@@ -192,7 +194,7 @@ const FeedsDiv = (props) => {
             h="10"
             display={input ? "none" : "block"}
           >
-            <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
+            <Image w="45px" borderRadius={"50px"} src={user?.photoURL || personImg} />
           </Box>
 
           {/* -------------------- (Comment Part) --------- */}
