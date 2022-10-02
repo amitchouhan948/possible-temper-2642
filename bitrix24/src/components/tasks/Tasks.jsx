@@ -2,7 +2,7 @@ import { Box, Button, Flex, Hide, Input, Show, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import NavToggle from "./NavToggle";
 import styles from "./tasks.module.css";
-import { MdOutlineNavigateNext } from "react-icons/md";
+import { FaGreaterThan } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import NewTaskModal from "./NewTaskModal";
 import { IoMdSettings } from "react-icons/io";
@@ -10,8 +10,10 @@ import { MdOutlineFlashOn } from "react-icons/md";
 import { BiMessageCheck } from "react-icons/bi";
 import { AiFillLock } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
+ import { FaLessThan } from "react-icons/fa";
 import TaskTable from "./TaskTable";
 import axios from "axios";
+import { Skeleton, Stack} from '@chakra-ui/react'
 
 const getTask = async () => {
   let res = await axios.get("https://servertodeploycheck.herokuapp.com/tasks");
@@ -22,6 +24,7 @@ const getTask = async () => {
 const Tasks = () => {
   const [show, setShow] = useState(true);
   const [tasks, setTasks] = useState([]);
+  const [loading,setLoading]=useState(false)
 
   console.log(show);
 
@@ -31,8 +34,10 @@ const Tasks = () => {
 
   // console.log(tasks)
   const updateTasks = () => {
+    setLoading(true)
     getTask().then((res) => {
       setTasks(res.data);
+      setLoading(false)
     });
   };
 
@@ -69,7 +74,7 @@ const Tasks = () => {
               pl="0px"
               pr="0"
             >
-              <MdOutlineNavigateNext />
+              {show ? <FaLessThan size="13px" color="grey" /> : <FaGreaterThan size="13px" color="grey"/>}
             </Button>{" "}
             {/* Toggle Button */}
             {show && <NavToggle />}
@@ -142,13 +147,13 @@ const Tasks = () => {
               <NewTaskModal updateTasks={updateTasks} />{" "}
               {/* Task adding Modal components */}
             </Box>
-            <Box width="52%" mt="-8px" ml="12px">
+            <Box width="52%" mt="-16px" ml="12px">
               <Input
                 bgColor={"rgb(233 237 242 / 40%)"}
                 placeholder="Filter and search"
               />
             </Box>
-            <Box mt="-8px" ml="12px">
+            <Box mt="-8px" ml="100px">
               <Button
                 bgColor="rgb(233 237 242 / 40%)"
                 border={".5px solid white"}
@@ -157,7 +162,7 @@ const Tasks = () => {
                 <IoMdSettings color="white" size="22px" />
               </Button>
             </Box>
-            <Box mt="-8px" ml="12px">
+            <Box mt="-8px" ml="40px">
               <Button
                 bgColor="rgb(233 237 242 / 40%)"
                 border={".5px solid white"}
@@ -182,12 +187,12 @@ const Tasks = () => {
             justifyContent={"flex-start"}
             alignItems="center"
             margin={"auto"}
-            mt="3%"
-            mb={"3%"}
+            mt="2%"
+            mb={"2%"}
           >
             <Flex
               bgColor="rgb(233 237 242 / 40%)"
-              p="0.5em"
+              p="0.32em"
               borderRadius={"20px"}
               gap="20px"
             >
@@ -201,7 +206,7 @@ const Tasks = () => {
             <Flex
               bgColor="rgb(233 237 242 / 40%)"
               // border={"1px solid green"}
-              p="0.5em"
+              p="0.32em"
               borderRadius={"20px"}
               gap="25px"
               ml="12px"
@@ -215,25 +220,26 @@ const Tasks = () => {
               </Text>
             </Flex>
 
-            <Flex mb="10px" gap="20px" width={"150px"} ml={"450px"}>
-              <Box>
+            <Flex mb="10px"  width={"150px"} ml={"460px"} >
+              <Box p=".5em">
                 <Button
+                  
                   bgColor="rgb(233 237 242 / 40%)"
                   borderRadius={"20px"}
                   color="white"
                   _hover={{ backgroundColor: "rgb(233 237 242 / 66%)" }}
                 >
-                  <AiFillLock size="28px" />
+                  <AiFillLock size="22px" />
                 </Button>
               </Box>
-              <Box>
+              <Box p=".5em">
                 <Button
                   bgColor="rgb(233 237 242 / 40%)"
                   borderRadius={"20px"}
                   color="white"
                   _hover={{ backgroundColor: "rgb(233 237 242 / 66%)" }}
                 >
-                  <BsThreeDots size="28px" />
+                  <BsThreeDots size="22px" />
                 </Button>
               </Box>
             </Flex>
@@ -249,8 +255,12 @@ const Tasks = () => {
             mt="1%"
           >
             {/* <Table> */}
-
-            <TaskTable tasks={tasks} updateTasks={updateTasks} />
+            {loading && <Stack gap="10px" pb=".3em" >
+            <Skeleton bgColor="rgb(233 237 242 / 40%)" mt=".3em" borderRadius={"20px"} height='60px' />
+            <Skeleton bgColor="rgb(233 237 242 / 40%)" borderRadius={"20px"} height='60px' />
+            <Skeleton bgColor="rgb(233 237 242 / 40%)"   borderRadius={"20px"} height='60px' />
+            </Stack>}
+            {!loading && <TaskTable tasks={tasks} updateTasks={updateTasks} />}
           </Box>
 
           {/* Footer */}

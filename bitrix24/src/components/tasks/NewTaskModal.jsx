@@ -75,11 +75,11 @@ function NewTaskModal({ updateTasks }) {
         ref={btnRef}
         bgColor="#b3e728"
         _hover={{ bgColor: "#c9f652eb" }}
-        fontSize="12px"
+        fontSize="18px"
         onClick={onOpen}
         ml="10px"
       >
-        <Text color={"#4f5c6b"} mr="10px">
+        <Text fontSize="17px" color={"#4f5c6b"} mr="10px">
           NEW TASK
         </Text>{" "}
         <Text color={"#4f5c6b"} mr="10px">
