@@ -1,3 +1,7 @@
+.msgRow{
+  color: grey;
+}
+
 .msgRow > p:active {
   color: blue;
   text-decoration: underline;

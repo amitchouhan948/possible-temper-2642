@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import { BsApple, BsFillPersonFill } from "react-icons/bs";
+import { BsApple } from "react-icons/bs";
 import { AiFillWindows, AiOutlinePlusCircle } from "react-icons/ai";
 import RightLogo from "./RightLogo.png";
 import AppstorImg from "./appstor.png";
@@ -8,9 +8,12 @@ import GooglePlayImg from "./googleplay.png";
 import { useEffect } from "react";
 import { getMessage2 } from "../Api/Api";
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../config/Firebase";
 
 const FeedRight = () => {
   const [message, setMessage] = useState([]);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     getMessage2()
@@ -34,13 +37,11 @@ const FeedRight = () => {
             color={"#ffffff"}
             borderRadius="50px"
             w="40px"
-            p="2"
-            pl="9px"
             ml="4"
             mt="5"
             h="10"
           >
-            <BsFillPersonFill />
+            <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
           </Box>
         </Box>
 
@@ -71,7 +72,9 @@ const FeedRight = () => {
             justifyContent={"space-between"}
             gap="10"
           >
-            <Text ml="3">0</Text>
+            <Text color="black" ml="3">
+              0
+            </Text>
             <Text color={"#2dc2f2"}>0%</Text>
           </Box>
         </Box>
@@ -111,9 +114,11 @@ const FeedRight = () => {
               justifyContent="space-between"
               alignItems={"center"}
             >
-              <Text>Ongoing</Text>
+              <Text color="black">Ongoing</Text>
               <Box display={"flex"} justifyContent="space-between" gap={10}>
-                <Text fontSize={24}>0</Text>
+                <Text color="rgba(19, 19, 19, 0.826)" fontSize={24}>
+                  0
+                </Text>
                 <Text
                   bg="#f8e7ef"
                   color="#f47fa1"
@@ -135,9 +140,11 @@ const FeedRight = () => {
               justifyContent="space-between"
               alignItems={"center"}
             >
-              <Text>Assisting</Text>
+              <Text color="rgba(19, 19, 19, 0.826)">Assisting</Text>
               <Box display={"flex"} justifyContent="space-between" gap={10}>
-                <Text fontSize={24}>0</Text>
+                <Text color="rgba(19, 19, 19, 0.826)" fontSize={24}>
+                  0
+                </Text>
                 <Text
                   bg="#f8e7ef"
                   color="#f47fa1"
@@ -159,9 +166,11 @@ const FeedRight = () => {
               justifyContent="space-between"
               alignItems={"center"}
             >
-              <Text>Set by me</Text>
+              <Text color="rgba(19, 19, 19, 0.826)">Set by me</Text>
               <Box display={"flex"} justifyContent="space-between" gap={10}>
-                <Text fontSize={24}>0</Text>
+                <Text color="rgba(19, 19, 19, 0.826)" fontSize={24}>
+                  0
+                </Text>
                 <Text
                   bg="#f8e7ef"
                   color="#f47fa1"
@@ -183,9 +192,11 @@ const FeedRight = () => {
               justifyContent="space-between"
               alignItems={"center"}
             >
-              <Text>Following</Text>
+              <Text color="rgba(19, 19, 19, 0.826)">Following</Text>
               <Box display={"flex"} justifyContent="space-between" gap={10}>
-                <Text fontSize={24}>0</Text>
+                <Text color="rgba(19, 19, 19, 0.826)" fontSize={24}>
+                  0
+                </Text>
                 <Text
                   bg="#f8e7ef"
                   color="#f47fa1"
@@ -243,17 +254,19 @@ const FeedRight = () => {
                     bg={"#7b8691"}
                     color={"#ffffff"}
                     borderRadius="50px"
-                    w="42px"
-                    p="2"
-                    pl="10px"
-                    pb="25px"
+                    w="38px"
                     ml="0"
-                    h="42px"
+                    mt="2"
+                    h="38px"
                   >
-                    <BsFillPersonFill />
+                    <Image
+                      w="40px"
+                      borderRadius={"50px"}
+                      src={user.photoURL || ""}
+                    />
                   </Box>
-                  <Box textAlign={"left"}>
-                    <Text>{item.email}</Text>
+                  <Box mt="2" textAlign={"left"}>
+                    <Text color="black">{item.email}</Text>
                     <Text color={"#246ab1"} fontWeight={500}>
                       {item.message}
                     </Text>
@@ -303,14 +316,14 @@ const FeedRight = () => {
               >
                 <Box display={"flex"} alignItems="center">
                   <BsApple />
-                  <Text ml="1" fontSize={14}>
+                  <Text color="rgba(19, 19, 19, 0.826)" ml="1" fontSize={14}>
                     MAC OS
                   </Text>
                 </Box>
 
                 <Box display={"flex"} alignItems="center">
                   <AiFillWindows />
-                  <Text ml="1" fontSize={13}>
+                  <Text color="rgba(19, 19, 19, 0.826)" ml="1" fontSize={13}>
                     WINDOWS
                   </Text>
                 </Box>
@@ -358,14 +371,14 @@ const FeedRight = () => {
               >
                 <Box display={"flex"} alignItems="center">
                   <Image w="24px" src={AppstorImg} alt="AppstorImg" />
-                  <Text ml="0" fontSize={14}>
+                  <Text color="rgba(19, 19, 19, 0.826)" ml="0" fontSize={14}>
                     APP STORE
                   </Text>
                 </Box>
 
                 <Box display={"flex"} alignItems="center">
                   <Image w="24px" src={GooglePlayImg} alt="GooglePlayImg" />
-                  <Text ml="0" fontSize={13}>
+                  <Text color="rgba(19, 19, 19, 0.826)" ml="0" fontSize={13}>
                     GOOGLE PLAY
                   </Text>
                 </Box>

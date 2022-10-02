@@ -87,11 +87,11 @@ const Message = (props) => {
             MESSAGE
           </Text>
           <Link to="/task">
-            <Text  color="grey">TASK</Text>
+            <Text  className={style.msgRow} >TASK</Text>
           </Link>
-          <Text color="grey">EVENT</Text>
-          <Text color="grey">POLL</Text>
-          <Text color="grey">MORE</Text>
+          <Text className={style.msgRow} >EVENT</Text>
+          <Text className={style.msgRow} >POLL</Text>
+          <Text className={style.msgRow} >MORE</Text>
         </Box>
 
         {/* ------------------- (Input) --------------------- */}
@@ -135,10 +135,10 @@ const Message = (props) => {
             <label htmlFor="upload">File</label>
             <Input type="file" id="upload" hidden />
             <label htmlFor="upload">New document</label>
-            <Text>Mention</Text>
-            <Text>Quote</Text>
-            <Text>Add tag</Text>
-            <Text>Record Video</Text>
+            <Text className={style.MiddleRow} >Mention</Text>
+            <Text className={style.MiddleRow} >Quote</Text>
+            <Text className={style.MiddleRow} >Add tag</Text>
+            <Text className={style.MiddleRow} >Record Video</Text>
           </Box>
 
           {/* -----------------------(To: add more) =------------------- */}

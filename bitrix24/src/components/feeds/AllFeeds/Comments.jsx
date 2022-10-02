@@ -1,9 +1,11 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, Image } from '@chakra-ui/react';
 import React from 'react'
-import { BsFillPersonFill } from 'react-icons/bs';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from "../../../config/Firebase";
 
 const Comments = (props) => {
   const { day, time, email, message, id, handleDelete1 } = props;
+  const [user] = useAuthState(auth);
 
   return (
     <div>
@@ -15,13 +17,12 @@ const Comments = (props) => {
               color={"#ffffff"}
               borderRadius="50px"
               w="37px"
-              pl="7px"
-              pt={1}
               ml="0"
               mt="4"
               h="36px"
             >
-              <BsFillPersonFill />
+             <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
+
             </Box>
 
             <Box

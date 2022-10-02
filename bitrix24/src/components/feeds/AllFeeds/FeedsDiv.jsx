@@ -77,12 +77,10 @@ const FeedsDiv = (props) => {
             color={"#ffffff"}
             borderRadius="50px"
             w="45px"
-            p="2"
-            pl="8px"
             ml="5"
             mt="5"
           >
-            <BsFillPersonFill />
+            <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
           </Box>
           {/* --------- */}
           <Box w="100%" mt="6">
@@ -118,7 +116,14 @@ const FeedsDiv = (props) => {
         </Box>
 
         {/* --------- (Feed Text) ----------- */}
-        <Text w="80%" ml="80px" mt="4" textAlign={"left"} fontSize="17">
+        <Text
+          color="rgb(87, 78, 78)"
+          w="80%"
+          ml="80px"
+          mt="4"
+          textAlign={"left"}
+          fontSize="17"
+        >
           {message}
         </Text>
 
@@ -158,11 +163,11 @@ const FeedsDiv = (props) => {
           >
             Comment
           </Text>
-          <Text onClick={() => setFollow(!follow)}>
+          <Text color="grey" onClick={() => setFollow(!follow)}>
             {follow ? "Follow" : "Unfollow"}
           </Text>
-          <Text>More</Text>
-          <Text>
+          <Text color="grey">More</Text>
+          <Text color="grey">
             <ViewIcon /> 1
           </Text>
         </Box>
@@ -182,14 +187,12 @@ const FeedsDiv = (props) => {
             color={"#ffffff"}
             borderRadius="50px"
             w="40px"
-            p="2"
-            pl="9px"
             ml="5"
             mt="2"
             h="10"
             display={input ? "none" : "block"}
           >
-            <BsFillPersonFill />
+            <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
           </Box>
 
           {/* -------------------- (Comment Part) --------- */}
@@ -245,11 +248,19 @@ const FeedsDiv = (props) => {
                 <label htmlFor="upload">File</label>
                 <Input type="file" id="upload" hidden />
                 <label htmlFor="upload">New document</label>
-                <Text>Mention</Text>
-                <Text _hover={{ color: "#7b8691" }}>Mention</Text>
-                <Text _hover={{ color: "#7b8691" }}>Quote</Text>
-                <Text _hover={{ color: "#7b8691" }}>Add tag</Text>
-                <Text _hover={{ color: "#7b8691" }}>Record Video</Text>
+                <Text color="#7b869190">Mention</Text>
+                <Text color="#7b869190" _hover={{ color: "#7b8691" }}>
+                  Mention
+                </Text>
+                <Text color="#7b869190" _hover={{ color: "#7b8691" }}>
+                  Quote
+                </Text>
+                <Text color="#7b869190" _hover={{ color: "#7b8691" }}>
+                  Add tag
+                </Text>
+                <Text color="#7b869190" _hover={{ color: "#7b8691" }}>
+                  Record Video
+                </Text>
               </Box>
 
               {/* ----------------------- (Send - Cancel button) ------------------------------- */}

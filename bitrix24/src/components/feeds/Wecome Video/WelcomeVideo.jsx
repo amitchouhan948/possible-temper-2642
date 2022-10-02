@@ -10,17 +10,11 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { BsFillPersonFill } from "react-icons/bs";
 import LikeImg from "./Like.png";
 import { deleteComments2, getComments2, sendComments2 } from "../Api/Api";
 import CommentPart from "./CommentPart";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../config/Firebase";
-
-
-
-
-
 
 const WelcomeVideo = (props) => {
   const [input, setInput] = useState(false);
@@ -46,7 +40,7 @@ const WelcomeVideo = (props) => {
   };
 
   const handleAdd = () => {
-    sendComments2(value, props,user)
+    sendComments2(value, props, user)
       .then((res) => {
         ShowData();
       })
@@ -56,7 +50,7 @@ const WelcomeVideo = (props) => {
     setInput("");
   };
 
-  const handleDelete2 = (id) =>{
+  const handleDelete2 = (id) => {
     deleteComments2(id)
       .then((res) => {
         ShowData();
@@ -65,7 +59,7 @@ const WelcomeVideo = (props) => {
         console.log(err);
       });
     setInput("");
-  }
+  };
 
   return (
     <div>
@@ -90,12 +84,10 @@ const WelcomeVideo = (props) => {
               color={"#ffffff"}
               borderRadius="50px"
               w="45px"
-              p="2"
-              pl="8px"
               ml="5"
               mt="0"
             >
-              <BsFillPersonFill />
+              <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
             </Box>
             {/* --------- */}
             <Box mt="6">
@@ -140,7 +132,7 @@ const WelcomeVideo = (props) => {
             color="grey"
           >
             <Box display={hide ? "block" : "none"}>
-              <Text>
+              <Text color={"grey"}>
                 Hurray! You are about to get 1000% more productive with
                 Bitrix24. Please watch this 1-minute video to learn what
                 Bitrix24 is about, how to invite your colleagues and where to
@@ -196,11 +188,11 @@ const WelcomeVideo = (props) => {
             >
               Comment
             </Text>
-            <Text onClick={() => setFollow(!follow)}>
+            <Text color="grey" onClick={() => setFollow(!follow)}>
               {follow ? "Follow" : "Unfollow"}
             </Text>
-            <Text>More</Text>
-            <Text>
+            <Text color="grey">More</Text>
+            <Text color="grey">
               <ViewIcon /> 1
             </Text>
           </Box>
@@ -208,11 +200,9 @@ const WelcomeVideo = (props) => {
           {/* ------------------ (Comment Component) --------------- */}
           {comments2.map((item) => (
             <Grid key={item.id} mt="-2" w="50%" ml={"8%"}>
-              <CommentPart {...item} handleDelete2={handleDelete2}/>
+              <CommentPart {...item} handleDelete2={handleDelete2} />
             </Grid>
           ))}
-
-
 
           {/* -------------------- (Input Part) ----------------- */}
 
@@ -223,14 +213,12 @@ const WelcomeVideo = (props) => {
               color={"#ffffff"}
               borderRadius="50px"
               w="40px"
-              p="2"
-              pl="9px"
               ml="5"
               mt="2"
               h="10"
               display={input ? "none" : "block"}
             >
-              <BsFillPersonFill />
+              <Image w="45px" borderRadius={"50px"} src={user.photoURL || ""} />
             </Box>
 
             {/* -------------------- (Comment Part) --------- */}
@@ -285,11 +273,21 @@ const WelcomeVideo = (props) => {
                   <label htmlFor="upload">File</label>
                   <Input type="file" id="upload" hidden />
                   <label htmlFor="upload">New document</label>
-                  <Text>Mention</Text>
-                  <Text _hover={{ color: "#7b8691" }}>Mention</Text>
-                  <Text _hover={{ color: "#7b8691" }}>Quote</Text>
-                  <Text _hover={{ color: "#7b8691" }}>Add tag</Text>
-                  <Text _hover={{ color: "#7b8691" }}>Record Video</Text>
+                  <Text color="#7b869190" _hover={{ color: "#7b8691" }}>
+                    Mention
+                  </Text>
+                  <Text color="#7b869190" _hover={{ color: "#7b8691" }}>
+                    Mention
+                  </Text>
+                  <Text color="#7b869190" _hover={{ color: "#7b8691" }}>
+                    Quote
+                  </Text>
+                  <Text color="#7b869190" _hover={{ color: "#7b8691" }}>
+                    Add tag
+                  </Text>
+                  <Text color="#7b869190" _hover={{ color: "#7b8691" }}>
+                    Record Video
+                  </Text>
                 </Box>
 
                 {/* ----------------------- (Send - Cancel button) ------------------------------- */}
