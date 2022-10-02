@@ -52,6 +52,7 @@ import GooglePlay from "./home-images/GooglePlay.svg"
 import 'antd/dist/antd.css';
 import { Carousel } from 'antd';
 import { Link }  from "react-router-dom";
+import { Box, Heading, Image } from "@chakra-ui/react";
 
 const contentStyle = {
   height: '160px',
@@ -113,85 +114,13 @@ function HomePage()
       </HeaderGridItem>
       </HeaderGrid>
       
-      <CarouselParent>
-      <Carousel autoplay>
-        <CarouselContainer>
-          <h2>Collaboration & CRM</h2>
-          <CarouselItem>
-            <div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Chats & video calls</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Online meetings</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Feed</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Calendar</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Online documents</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Drive</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Webmail</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Workgroups</span></div>
-            </div>
-            <div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Leads, Deals, Contacts, Companies</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Quotes, Invoices</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Online payments</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Sales automation</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Rules and triggers</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Rules and triggers</span>Contact center</div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Marketing</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Sales Intelligence</span></div>
-            </div>
-          </CarouselItem>
-        </CarouselContainer>
-        <CarouselContainer>
-          <h2>Tasks and Sites & Store</h2>
-          <CarouselItem>
-            <div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Tasks Projects</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Gantt chart</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Kanban board</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Time tracking</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Online documents</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Task and project templates</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Webmail</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Task automation CRM integration</span></div>
-            </div>
-            <div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Leads, Deals, Contacts, Companies</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Quotes, Invoices</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Online payments</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Sales automation</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Rules and triggers</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Rules and triggers</span>Contact center</div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Marketing</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Sales Intelligence</span></div>
-            </div>
-          </CarouselItem>
-        </CarouselContainer>
-        <CarouselContainer>
-          <h2>HR & Automation</h2>
-          <CarouselItem>
-            <div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Employee directory</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Worktime tracking & reports</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Feed</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Calendar</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Online documents</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Drive</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Webmail</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Absence management</span></div>
-            </div>
-            <div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Announcements & appreciations</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Knowledge base</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Online payments</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> No-code RPA</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Rules and triggers</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Requests & approvals</span>Contact center</div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Marketing</span></div>
-              <div><img src={RightGreen} alt="RightGreen"/><span> Workflow automation</span></div>
-            </div>
-          </CarouselItem>
-        </CarouselContainer>
-      </Carousel>
+      <CarouselParent style={{paddingTop:"75px",paddingLeft:"100px"}}>
+       <Box bgColor={"white"} >
+        <Image src={require("./Crousel.gif")}/>
+      </Box>
       </CarouselParent>
+     
+      
 
 
       <CompanyCount>
@@ -206,7 +135,7 @@ function HomePage()
           </CompanyCountGridItemLeft>
           <CompanyCountGridItemRight>
             <div>
-              available in <span>18</span> languages
+              available in <span style={{padding:"10px",borderRadius:"50px"}}>18</span> languages
             </div>
           </CompanyCountGridItemRight>
         </CompanyCountGrid>
@@ -324,7 +253,7 @@ function HomePage()
       <ReadyComponent>
         <ReadyComponentItem>
           <div>
-            <div>
+            <div style={{color:"white",fontWeight:"bold"}}>
               Ready to try?
             </div>
             <div>
