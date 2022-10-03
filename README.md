@@ -15,8 +15,8 @@ Features
 Our Team
 - Amit Singh Chauhan 
 - Abhishek Pratap Solanki
-- Aman
-- Deepak Pawar
+- Aman Trivedi
+- Dipak Pawar
 - Sumit Kumar
 
 
