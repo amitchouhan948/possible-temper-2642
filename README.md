@@ -13,8 +13,8 @@ Features
 
 
 Our Team
-- Amit 
-- Abhishek Pratap Solanli
+- Amit Singh Chauhan 
+- Abhishek Pratap Solanki
 - Aman
 - Deepak Pawar
 - Sumit Kumar
