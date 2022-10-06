@@ -67,6 +67,7 @@ const contentStyle = {
 function HomePage() 
 {
   return (
+    <div style={{width:"1533px"}}>
     <Wrapper>
       <HeaderGrid>
         <HeaderGridItem>
@@ -301,6 +302,7 @@ function HomePage()
         Copyright © 2022 Bitrix24
       </FooterEnd>
     </Wrapper>
+    </div>
   );
 }
 
