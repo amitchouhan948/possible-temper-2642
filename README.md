@@ -49,10 +49,10 @@ Features
 <h1>Tech Stack</h1>
 <ul>
 <li>React.JS</li>
-<li>Material UI</li>
+<li>Chakara UI</li>
 <li>MongoDB</li>
 <li>Express</li>
-<li>Node</li>
+<li>Google Firebase</li>
 </ul>
 
 # Creators
