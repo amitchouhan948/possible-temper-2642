@@ -40,7 +40,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const postTask = async (initialTask) => {
   try {
     let res = await axios.post(
-      "https://servertodeploycheck.herokuapp.com/tasks",
+      "https://json-server-1.onrender.com/tasks",
       initialTask
     );
 

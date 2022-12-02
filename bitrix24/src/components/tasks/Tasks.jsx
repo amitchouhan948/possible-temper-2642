@@ -16,7 +16,7 @@ import axios from "axios";
 import { Skeleton, Stack} from '@chakra-ui/react'
 
 const getTask = async () => {
-  let res = await axios.get("https://servertodeploycheck.herokuapp.com/tasks");
+  let res = await axios.get("https://json-server-1.onrender.com/tasks");
 
   return res;
 };
