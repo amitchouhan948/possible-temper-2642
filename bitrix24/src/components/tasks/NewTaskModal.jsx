@@ -40,7 +40,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const postTask = async (initialTask) => {
   try {
     let res = await axios.post(
-      "https://json-server-1.onrender.com/tasks",
+      "https://bitrix24-render-backend-deploy.onrender.com/tasks",
       initialTask
     );
 

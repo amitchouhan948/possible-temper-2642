@@ -29,20 +29,20 @@ import personImg from "../personImg.jpg"
 const deleteTask = async (id, action) => {
   if (action === "delete") {
     let res = await axios.delete(
-      `https://json-server-1.onrender.com/tasks/${id}`
+      `https://bitrix24-render-backend-deploy.onrender.com/tasks/${id}`
     );
 
     console.log(res.data);
   } else if (action === "patch1") {
     let res = await axios.patch(
-      `https://json-server-1.onrender.com/tasks/${id}`,
+      `https://bitrix24-render-backend-deploy.onrender.com/tasks/${id}`,
       { isActive: false }
     );
 
     console.log(res.data);
   } else if (action === "patch0") {
     let res = await axios.patch(
-      `https://json-server-1.onrender.com/tasks/${id}`,
+      `https://bitrix24-render-backend-deploy.onrender.com/tasks/${id}`,
       { isActive: true }
     );
 
